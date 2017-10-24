@@ -1,9 +1,18 @@
 import sys
+import numpy as np
 from bs4 import BeautifulSoup
 import requests
 import re
 import json
 import urllib2
+
+def get_num_views(soup):
+	spans = soup.find_all('span',{'class':'recent-views'})
+	views = [int(span.get_text().strip().replace('views','').replace('recent','')) for span in spans]
+	if views:
+		return np.max(views)	
+	else:
+		return -1
 
 def get_url(url, pattern, out):
 #url = sys.argv[1]
@@ -11,6 +20,7 @@ def get_url(url, pattern, out):
         r  = requests.get(url)
         data = r.text
         soup = BeautifulSoup(data,"lxml")
+	views = get_num_views(soup)
         for link in soup.find_all('a'):
                 lst = link.get('href')
                 if(lst):
@@ -22,19 +32,22 @@ def get_url(url, pattern, out):
 					data=json.load(response)
 					access = data["accessLevel"]
 					desc = data["description"].replace(',',' ').replace('\n',' ').replace('\r',' ')
-					distributions = data["distribution"]
-					mediaTypes = ""
-					for i in range(len(distributions)):
-						if "mediaType" in distributions[i]:
-							mediaTypes= mediaTypes + ';' + distributions[i]["mediaType"]
+					if 'distribution' in data:
+						distributions = data["distribution"]
+						mediaTypes = ""
+						for i in range(len(distributions)):
+							if "mediaType" in distributions[i]:
+								mediaTypes= mediaTypes + ';' + distributions[i]["mediaType"]
+					else:
+						mediaTypes = ""
 					if 'keyword' in data:
 						keywords = data["keyword"]
 					else:
 						keywords = ['N/A']
-					title = data["title"].strip()
+					title = data["title"].strip().replace(',',';')
 					source = data["publisher"]["name"].replace(',',' ').strip()
 					print url
-					out_str =  (title +","+source+","+url+ "," + desc + "," + ';'.join(str(k).strip() for k in keywords)+'\n').encode('utf-8')
+					out_str =  (title +","+source+","+url+ "," + desc + "," + str(views)+','+';'.join(str(k).strip() for k in keywords)+'\n').encode('utf-8')
 					out.write(out_str)
         return 0
 
@@ -47,6 +60,5 @@ def get_attribute_webpage(url_file_name,pattern,out):
 
 if __name__ == '__main__':
 	out = open('datagov.csv','a')
-	#out.write(("URL"+";"+"Title" + ";"+ "Description" + ";" + "Keywords\n").encode('utf-8'))
 	get_attribute_webpage(sys.argv[1],sys.argv[2],out)
 	out.close()
