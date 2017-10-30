@@ -35,11 +35,14 @@ def get_url(url, pattern, out):
 					if 'distribution' in data:
 						distributions = data["distribution"]
 						mediaTypes = ""
-						for i in range(len(distributions)):
-							if "mediaType" in distributions[i]:
-								mediaTypes= mediaTypes + ';' + distributions[i]["mediaType"]
-					else:
-						mediaTypes = ""
+						if (distributions):
+							for i in range(len(distributions)):
+								if "mediaType" in distributions[i]:
+									mediaTypes= mediaTypes + ';' + distributions[i]["mediaType"]
+								else:
+									mediaTypes = ""
+						else: 
+							mediaTypes = 'N/A'
 					if 'keyword' in data:
 						keywords = data["keyword"]
 					else:
@@ -47,7 +50,7 @@ def get_url(url, pattern, out):
 					title = data["title"].strip().replace(',',';')
 					source = data["publisher"]["name"].replace(',',' ').strip()
 					print url
-					out_str =  (title +","+source+","+url+ "," + desc + "," + str(views)+','+';'.join(str(k).strip() for k in keywords)+'\n').encode('utf-8')
+					out_str =  (title +","+source+","+url+ "," + desc + "," + str(views)+','+';'.join((str(k).strip().replace(',',';')) for k in keywords)+'\n').encode('utf-8')
 					out.write(out_str)
         return 0
 
