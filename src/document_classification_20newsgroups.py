@@ -32,6 +32,7 @@ from optparse import OptionParser
 import sys
 from time import time
 import matplotlib.pyplot as plt
+import pickle
 
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -140,7 +141,7 @@ print(categories if categories else "all")
 
 #data_train = fetch_20newsgroups(subset='train', categories=categories,shuffle=True, random_state=42,remove=remove)
 
-d = pd.read_csv('kaggle-data-set-labelled2.csv')
+d = pd.read_csv('/home/sharvani/ML1/Machine-Learning-Projects/data/kaggle-data-set-labelled2.csv')
 #d = df.dropna().copy()
 freq_values = d['label'].value_counts() 
 print (freq_values)
@@ -248,12 +249,14 @@ def trim(s):
 
 # #############################################################################
 # Benchmark classifiers
-def benchmark(clf):
+def benchmark(clf,ind):
     print('_' * 80)
     print("Training: ")
     print(clf)
     t0 = time()
     clf.fit(X_train, y_train)
+    filename = 'finalized_model_' + ind + '.sav'
+    pickle.dump(clf, open(filename, 'wb'))
     train_time = time() - t0
     print("train time: %0.3fs" % train_time)
 
@@ -301,35 +304,35 @@ for clf, name in (
         (RandomForestClassifier(n_estimators=100,class_weight="balanced"), "Random forest")):
     print('=' * 80)
     print(name)
-    results.append(benchmark(clf))
+    results.append(benchmark(clf,'ridge'))
 
 for penalty in ["l2", "l1"]:
     print('=' * 80)
     print("%s penalty" % penalty.upper())
     # Train Liblinear model
     results.append(benchmark(LinearSVC(penalty=penalty, dual=False,
-                                       tol=1e-3,class_weight="balanced")))
+                                       tol=1e-3,class_weight="balanced"),'liblinear'))
 
     # Train SGD model
     results.append(benchmark(SGDClassifier(alpha=.0001, n_iter=50,
-                                           penalty=penalty,class_weight="balanced")))
+                                           penalty=penalty,class_weight="balanced"),'SGD'))
 
 # Train SGD with Elastic Net penalty
 print('=' * 80)
 print("Elastic-Net penalty")
 results.append(benchmark(SGDClassifier(alpha=.0001, n_iter=50,
-                                       penalty="elasticnet",class_weight="balanced")))
+                                       penalty="elasticnet",class_weight="balanced"),'SGD_Elastic_net_penalty'))
 
 # Train NearestCentroid without threshold
 print('=' * 80)
 print("NearestCentroid (aka Rocchio classifier)")
-results.append(benchmark(NearestCentroid()))
+results.append(benchmark(NearestCentroid(),'nearest_centroid'))
 
 # Train sparse Naive Bayes classifiers
 print('=' * 80)
 print("Naive Bayes")
-results.append(benchmark(MultinomialNB(alpha=.01)))
-results.append(benchmark(BernoulliNB(alpha=.01)))
+results.append(benchmark(MultinomialNB(alpha=.01),'MultinomialNB'))
+results.append(benchmark(BernoulliNB(alpha=.01),'BernoulliNB'))
 
 print('=' * 80)
 print("LinearSVC with L1-based feature selection")
@@ -338,7 +341,7 @@ print("LinearSVC with L1-based feature selection")
 results.append(benchmark(Pipeline([
   ('feature_selection', SelectFromModel(LinearSVC(penalty="l1", dual=False,
                                                   tol=1e-3,class_weight="balanced"))),
-  ('classification', LinearSVC(penalty="l2"))])))
+  ('classification', LinearSVC(penalty="l2"))]),'LinearSVC'))
 
 # make some plots
 
