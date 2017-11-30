@@ -159,6 +159,7 @@ labels = d['label']
 
 data_train,data_test,labels_train,labels_test = train_test_split(data,labels,test_size=0.25)
 le.fit(labels)
+np.save('classes.npy', le.classes_)
 y_train = le.transform(labels_train)
 y_test = le.transform(labels_test)
 
@@ -204,6 +205,8 @@ else:
                                  stop_words='english')
     #vectorizer.fit(data)
     X_train = vectorizer.fit_transform(data_train)
+    filename = 'vectorizer.pkl'
+    pickle.dump(vectorizer, open(filename, 'wb'))
 duration = time() - t0
 #print("done in %fs at %0.3fMB/s" % (duration, data_train_size_mb / duration))
 print("n_samples: %d, n_features: %d" % X_train.shape)
