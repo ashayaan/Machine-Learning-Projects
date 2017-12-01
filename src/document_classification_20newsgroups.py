@@ -45,6 +45,7 @@ from sklearn.svm import LinearSVC
 from sklearn.linear_model import SGDClassifier
 from sklearn.linear_model import Perceptron
 from sklearn.linear_model import PassiveAggressiveClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import BernoulliNB, MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import NearestCentroid
@@ -56,7 +57,6 @@ from sklearn.model_selection import train_test_split
 
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize 
-from nltk.stem import PorterStemmer
 
 # Display progress logs on stdout
 logging.basicConfig(level=logging.INFO,
@@ -141,7 +141,7 @@ print(categories if categories else "all")
 
 #data_train = fetch_20newsgroups(subset='train', categories=categories,shuffle=True, random_state=42,remove=remove)
 
-d = pd.read_csv('/home/sharvani/ML1/Machine-Learning-Projects/data/kaggle-data-set-labelled2.csv')
+d = pd.read_csv('../data/kaggle-data-set-labelled2.csv')
 #d = df.dropna().copy()
 freq_values = d['label'].value_counts() 
 print (freq_values)
@@ -307,7 +307,7 @@ for clf, name in (
         (RandomForestClassifier(n_estimators=100,class_weight="balanced"), "Random forest")):
     print('=' * 80)
     print(name)
-    results.append(benchmark(clf,'ridge'))
+    results.append(benchmark(clf,name))
 
 for penalty in ["l2", "l1"]:
     print('=' * 80)
@@ -317,13 +317,15 @@ for penalty in ["l2", "l1"]:
                                        tol=1e-3,class_weight="balanced"),'liblinear'))
 
     # Train SGD model
-    results.append(benchmark(SGDClassifier(alpha=.0001, n_iter=50,
+    results.append(benchmark(SGDClassifier(loss='log',alpha=.0001, n_iter=50,
                                            penalty=penalty,class_weight="balanced"),'SGD'))
+
+    results.append(benchmark(LogisticRegression(penalty=penalty,class_weight="balanced"),'LR'+penalty))
 
 # Train SGD with Elastic Net penalty
 print('=' * 80)
 print("Elastic-Net penalty")
-results.append(benchmark(SGDClassifier(alpha=.0001, n_iter=50,
+results.append(benchmark(SGDClassifier(loss='log',alpha=.0001, n_iter=50,
                                        penalty="elasticnet",class_weight="balanced"),'SGD_Elastic_net_penalty'))
 
 # Train NearestCentroid without threshold
