@@ -143,7 +143,9 @@ def super_super_classes(keyword,targets,le,prob):
 		return None
 
 def super_super_super_classes(keyword,targets,le,prob):
-	if (keyword == 'Science'):
+	#classes_list = ['Science']
+	#new_key = process.extractOne(keyword, classes_list)
+	if (new_key[0] == 'Science'):
 		prob_bio = super_super_classes('Biology',targets,le,prob)
 		prob_env = super_classes('Environment',targets,le,prob)
 		astronomy = le.transform(['astronomy'])[0]
@@ -172,12 +174,15 @@ def Predict(keyword):
 	loaded_model = pickle.load(open(filename, 'rb'))
 	pred = loaded_model.predict(X_test)
 	prob = loaded_model.predict_proba(X_test)
-	if (keyword in ['Law and Police', 'Governance', 'Finance','Education','Transport','Medicine','Environment','Languages','Multimedia','Sports','Internet']):
+ 	keys_top_level = ['Science'] 
+	keys_first_level = ['Social Sciences', 'Economics' ,' Technology', 'Biology']
+	keys_second_level = ['Law and Police', 'Governance', 'Finance', 'Education', 'Transport', 'Medicine', 'Environment', 'Languages', 'Multimedia', 'Sports', 'Internet']
+	if (keyword in keys_second_level):
 		print keyword
 		prob_curr_label = super_classes(keyword, le_classes,le,prob)
-	elif (keyword in ['Social Sciences','Economics','Technology','Biology']):
+	elif (keyword in keys_first_level):
 		prob_curr_label = super_super_classes(keyword, le_classes,le,prob)
-	elif (keyword in ['Science']):
+	elif (keyword in keys_top_level):
 		prob_curr_label = super_super_super_classes(keyword,le_classes,le,prob)
 	else:
 		numerical_label = le.transform([keyword])[0]
