@@ -1,0 +1,5 @@
+Current data organisation:
+
+1. all_data.csv: all kaggle, datagov and uci data put together
+2. kaggle_datagov_final.csv: kaggle and datagov data combined together (with the compatible column names)
+3. uci_final.csv: uci data with compatible column names
