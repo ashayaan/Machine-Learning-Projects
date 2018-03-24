@@ -1,4 +1,5 @@
 import logging
+import math
 import string
 import pandas as pd
 import numpy as np
@@ -42,6 +43,8 @@ ps = PorterStemmer()
 #'# From Caravan Institute #'.translate(None, string.punctuation)
 
 def stemming(sentence):
+    if (type(sentence) is float):
+	    sentence = '-'
     print (sentence)
     s = sentence.translate(None, string.punctuation)
     str1 = ''.join([i if ord(i) < 128 else ' ' for i in s]) #selecting only ascii characters

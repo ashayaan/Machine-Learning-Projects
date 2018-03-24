@@ -38,6 +38,8 @@ filename = '../models/finalized_model_LRl2.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
 
 def stemming(sentence):
+	if (type(sentence) is float):
+		sentence = ''
 	s = sentence.translate(None, string.punctuation)
 	str1 = ''.join([i if ord(i) < 128 else ' ' for i in s]) #selecting only ascii characters
 	words = word_tokenize(str1)
