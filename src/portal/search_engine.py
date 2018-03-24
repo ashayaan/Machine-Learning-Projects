@@ -37,9 +37,6 @@ le.fit(le_classes)
 filename = '../models/finalized_model_LRl2.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
 
-
-
-
 def stemming(sentence):
 	s = sentence.translate(None, string.punctuation)
 	str1 = ''.join([i if ord(i) < 128 else ' ' for i in s]) #selecting only ascii characters
@@ -168,8 +165,8 @@ def super_super_super_classes(keyword,targets,le,prob):
 
 
 def Predict(keyword):
-	d = pd.read_csv('../../data/kaggle-data-set.csv')
-	data_raw = d['Name']+d['Big Description']+d['Summary']
+	d = pd.read_csv('../../data/new_data/all_data.csv')
+	data_raw = d['Title']+d['Description']+d['Summary']
 
 	data = data_raw.apply(stemming)
 	X_test = loaded_vectorizer.transform(data)
@@ -201,7 +198,7 @@ def Predict(keyword):
 	prob_series = pd.Series(prob_curr_label)
 	d['Probability'] = prob_series.values
 	greater_than_thresh = d[d['Probability']>thresh]
-	return greater_than_thresh.drop(['Label','Predicted','Probability'],axis=1)
+	return greater_than_thresh.drop(['Predicted','Probability'],axis=1)
 
 
 @app.route('/')
