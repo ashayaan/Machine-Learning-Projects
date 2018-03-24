@@ -38,8 +38,8 @@ filename = '../models/finalized_model_LRl2.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
 
 def stemming(sentence):
-	if (type(sentence) is float):
-		sentence = ''
+	#if (type(sentence) is float):
+	#	sentence = ''
 	s = sentence.translate(None, string.punctuation)
 	str1 = ''.join([i if ord(i) < 128 else ' ' for i in s]) #selecting only ascii characters
 	words = word_tokenize(str1)
@@ -167,7 +167,7 @@ def super_super_super_classes(keyword,targets,le,prob):
 
 
 def Predict(keyword):
-	d = pd.read_csv('../../data/new_data/all_data.csv')
+	d = pd.read_csv('../../data/new_data/all.csv')
 	data_raw = d['Title']+d['Description']+d['Summary']
 
 	data = data_raw.apply(stemming)
