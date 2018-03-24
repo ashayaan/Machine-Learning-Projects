@@ -30,6 +30,15 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 ps = PorterStemmer()
+loaded_vectorizer = pickle.load(open('../models/vectorizer.pkl', 'rb'))
+le = preprocessing.LabelEncoder()
+le_classes = np.load('../models/classes.npy')
+le.fit(le_classes)
+filename = '../models/finalized_model_LRl2.sav'
+loaded_model = pickle.load(open(filename, 'rb'))
+
+
+
 
 def stemming(sentence):
 	s = sentence.translate(None, string.punctuation)
@@ -159,22 +168,12 @@ def super_super_super_classes(keyword,targets,le,prob):
 
 
 def Predict(keyword):
-	#d = pd.read_csv('/home/shayaan/sem_7/ML/Machine-Learning-Projects/data/datagov.csv')
-	#d_1 = d[['Name','Description','Publisher','URL','Views']]
 	d = pd.read_csv('../../data/kaggle-data-set.csv')
-	#data_raw1 = d['Name']+d['Description']
 	data_raw = d['Name']+d['Big Description']+d['Summary']
-	#data_raw = pd.concat([data_raw1,data_raw2],axis=0)
-	#data_raw = d['Name']+d['Big Description']+d['Summary']
+
 	data = data_raw.apply(stemming)
-	loaded_vectorizer = pickle.load(open('../models/vectorizer.pkl', 'rb'))
 	X_test = loaded_vectorizer.transform(data)
-	le = preprocessing.LabelEncoder()
-	le_classes = np.load('../models/classes.npy')
-	le.fit(le_classes)
-	#print le_classes
-	filename = '../models/finalized_model_LRl2.sav'
-	loaded_model = pickle.load(open(filename, 'rb'))
+	
 	pred = loaded_model.predict(X_test)
 	prob = loaded_model.predict_proba(X_test)
  	keys_top_level = ['Science'] 
@@ -219,4 +218,4 @@ def result():
 	  return render_template("test.html")
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(threaded=True,debug = True,host= '0.0.0.0')
