@@ -196,7 +196,7 @@ def Predict(keyword):
 	pred = loaded_model.predict(X_test)
 	prob = loaded_model.predict_proba(X_test)
 	keys_top_level = ['Science'] 
-	keys_first_level = ['Social Sciences', 'Economics' ,' Technology', 'Biology']
+	keys_first_level = ['Social Sciences', 'Economics' ,'Technology', 'Biology']
 	keys_second_level = ['Law and Police', 'Governance', 'Finance', 'Education', 'Transport', 'Medicine', 'Environment', 'Languages', 'Multimedia', 'Sports', 'Internet']
 	all_keys = keys_top_level + keys_first_level + keys_second_level + list(le_classes)
 	key_final = process.extractOne(keyword, all_keys)[0]
