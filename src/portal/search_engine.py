@@ -1,9 +1,11 @@
 import pickle
+import sqlalchemy
 import heapq
 import pandas as pd
 import string
 import sys
 import numpy as np
+import codecs
 
 from optparse import OptionParser
 from time import time
@@ -22,12 +24,30 @@ from nltk.stem import PorterStemmer
 
 from fuzzywuzzy import process
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# import sys
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 from flask import Flask, render_template, request
+from flaskext.mysql import MySQL
 app = Flask(__name__)
+mysql = MySQL()
+mysql.init_app(app)
+
+database_username = 'root'
+database_password = 'Shayaan7'
+database_ip       = '127.0.0.1'
+database_name     = 'shayaan'
+
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Shayaan7'
+app.config['MYSQL_DATABASE_DB'] = 'shayaan'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'. format(database_username, database_password, database_ip, database_name), echo=False, encoding="utf8")
+
+
+
 
 ps = PorterStemmer()
 loaded_vectorizer = pickle.load(open('../models/vectorizer.pkl', 'rb'))
@@ -175,7 +195,7 @@ def Predict(keyword):
 	
 	pred = loaded_model.predict(X_test)
 	prob = loaded_model.predict_proba(X_test)
- 	keys_top_level = ['Science'] 
+	keys_top_level = ['Science'] 
 	keys_first_level = ['Social Sciences', 'Economics' ,' Technology', 'Biology']
 	keys_second_level = ['Law and Police', 'Governance', 'Finance', 'Education', 'Transport', 'Medicine', 'Environment', 'Languages', 'Multimedia', 'Sports', 'Internet']
 	all_keys = keys_top_level + keys_first_level + keys_second_level + list(le_classes)
@@ -213,8 +233,16 @@ def result():
 	  result = request.form
 	  keyword = result['Name']
 	  df = Predict(keyword)
-	  df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
-	  return render_template("test.html")
+	  # df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
+	  df.to_sql(con=database_connection, name='result', if_exists='replace')
+	  # df['Author'] =df['Author'].apply(stemming)
+	  conn = mysql.connect()
+	  cursor =conn.cursor()
+	  cursor.execute("SELECT * from result;")
+	  data = cursor.fetchall()
+	  # print df.iloc[0]
+	  # print data[0]
+	  return render_template("test.html",result=data)
 
 if __name__ == '__main__':
    app.run(threaded=True,debug = True,host= '0.0.0.0')
