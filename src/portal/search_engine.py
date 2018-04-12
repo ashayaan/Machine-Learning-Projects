@@ -37,11 +37,11 @@ mysql.init_app(app)
 database_username = 'root'
 database_password = 'Shayaan7'
 database_ip       = '127.0.0.1'
-database_name     = 'shayaan'
+database_name     = 'huduku'
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'Shayaan7'
-app.config['MYSQL_DATABASE_DB'] = 'shayaan'
+app.config['MYSQL_DATABASE_DB'] = 'huduku'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'. format(database_username, database_password, database_ip, database_name), echo=False, encoding="utf8")
