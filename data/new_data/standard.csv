@@ -1,0 +1,296 @@
+Algorithm,Anonymised Labels,Author,Column Name,Column Type,Description,File type,Image dimension,Keywords,License,No Columns,No Rows,Number of Downloads,Number of Views,Size,Summary,Title,URL,Update
+"[Classification,  face recognition]",,United States Department of Defense,,,,Images,,,,,11338,,,,11338 images of 1199 individuals in different positions and at different times.,FERET (facial recognition technology),,2003
+"[Classification,  face recognition]",,R. Gross et al.,,,,Images  text,,,,,41368,,,,"41,368 color images of 68 people in 13 different poses.","CMU Pose, Illumination, and Expression (PIE)",,2000
+"[Classification,  face recognition]",,M. Grgic et al.,,,,Images  text,,,,,4160,,,,Color images of faces at various angles.,SCFace,,2011
+"[Video classification,  face recognition]",,L. Wolf et al.,,,,Video  text,,,,,"3,425 videos",,,,"Videos of 1,595 different people gathered from YouTube. Each clip is between 48 and 6,070 frames.",YouTube Faces DB,,2011
+[Facial landmark tracking.],,"Shen, Jie et al.",,,,Video  annotation file.,,,,,"114 videos, 218,000 frames.",,,,114 videos annotated for facial landmark tracking. The 68 landmark mark-up is applied to every frame.,300 videos in-the-Wild,,2015
+[Facial gesture recognition],,F. Freitas et al.,,,,Text,,,,,27965,,,,Grammatical Facial Expressions from Brazilian Sign Language.,Grammatical Facial Expressions Dataset,,2014
+[Face recognition],,T. Mitchell,,,,Images  Text,,,,,640,,,,Images of faces. Each person is photographed multiple times to capture different expressions.,CMU Face Images Dataset,,1999
+[Face recognition],,J. Yang et al.,,,,Images,,,,,165,,,,Faces of 15 individuals in 11 different expressions.,Yale Face Database,,1997
+[Facial expression analysis],,T. Kanade et al.,,,,Images  text,,,,,500+ sequences,,,,Large database of images with labels for expressions.,Cohn-Kanade AU-Coded Expression Database,,2000
+[Face recognition],,H. Ng et al.,,,,Images  text,,,,,107818,,,,Images of public figures scrubbed from image searching.,FaceScrub,,2014
+[Face recognition],,BioID,,,,Images  text,,,,,1521,,,,Images of faces with eye positions marked.,BioID Face Database,,2001
+"[Segmentation,  classification]",,R. Bhatt.,,,,Text,,,,,245057,,,,Randomly sampled color values from face images.,Skin Segmentation Dataset,,2012
+"[Face recognition,  classification]",,A Savran et al.,,,,"
+Images  text
+",,,,,4652,,,,3D Face image database.,Bosphorus,,2008
+"[Face recognition,  classification]",,University of York,,,,"
+Images  text
+",,,,,5250,,,,"neutral face, 5 expressions: anger, happiness, sadness, eyes closed, eyebrows raised.",UOY 3D-Face,,2004
+"[Face recognition,  classification]",,"Institute of Automation, Chinese Academy of Sciences",,,,"
+Images  text
+",,,,,4624,,,,"Expressions: Anger, smile, laugh, surprise, closed eyes.",CASIA,,2007
+"[Face recognition,  classification]",,"Zhao, G. et al.",,,,Annotated Visible Spectrum and Near Infrared Video captures at 25 frames per second,,,,,480,,,,Expressions: Anger Disgust Fear Happiness Sadness Surprise,CASIA,,2011
+"[Facial expression recognition,  classification]",,Binghamton University,,,,Images  text,,,,,2500,,,,"neutral face, and 6 expressions: anger, happiness, sadness, surprise, disgust, fear (4 levels). 3D images extracted.",BU-3DFE,,2006
+"[Face recognition,  classification]",,National Institute of Standards and Technology,,,,Images  text,,,,,4007,,,,"Up to 22 samples for each subject. Expressions: anger, happiness, sadness, surprise, disgust, puffy. 3D Data.",Face Recognition Grand Challenge Dataset,,2004
+"[Face recognition,  classification]",,King Juan Carlos University,,,,Images  text,,,,,549,,,,"Up to 61 samples for each subject. Expressions neutral face, smile, frontal accentuated laugh, frontal random gesture. 3D images.",Gavabdb,,2008
+"[Face recognition,  classification]",,Royal Military Academy (Belgium),,,,Images  text,,,,,9971,,,,"Up to 100 subjects, expressions mostly neutral. Several poses as well.",3D-RMA,,2004
+"[Gender classification,  face detection,  face recognition,  age estimation,  and glasses detection]",,"Afifi, M. et al.",,,,Images  Mat file,,,,,"42,592 (2,662 original image × 16 synthetic image)",,,,112 persons (66 males and 46 females) wear glasses under different illumination conditions.,SoF,,2017
+"[Gender classification,  face detection,  face recognition,  age estimation]",,"R. Rothe, R. Timofte, L. V. Gool",,,,Images,,,,,523051,,,,IMDB and Wikipedia face images with gender and age labels.,IMDB-WIKI,,2015
+[Action classification],,H. Kuehne et al.,,,,video clips,,,,,"6,766 video clips",,,,"51 action categories, each containing at least 101 clips, extracted from a range of sources.",Human Motion DataBase (HMDB51),,2011
+[Action prediction],,"Patron-Perez, A. et al.",,,,video clips,,,,,"6,766 video clips",,,,"Videos from 20 different TV shows for prediction social actions: handshake, high five, hug, kiss and none.",TV Human Interaction Dataset,,2013
+[Action prediction],,"Ryoo, M. S. et al.",,,,video clips,,,,,120 video clips,,,,"People acting out one of 6 actions (shake-hands, point, hug, push, kick, and punch) sometimes with multiple groups in the same video clip.",UT Interaction,,2009
+[Action classification],,"Xia, L. et al.",,,,video clips with depth information,,,,,200 video clips with depth information at 15 frames per second,,,,"10 different people performing one of 6 actions (walk, sit down, stand up, pick up, carry, throw, push, pull, wave hands and clap hands) in an office setting.",UT Kinect,,2012
+[Action classification],,"Yun, K. et al.",,,,video clips with depth information,,,,,Around 300 interactions,,,,"Seven participants performing one of 8 actions together (approaching, departing, pushing, kicking, punching, exchanging objects, hugging, and shaking hands) in an office setting.",SBU Interact,,2012
+[Action classification],,"Ofli, F. et al.",,,,8 PhaseSpace Motion Cpature  2 Stereo Cameras  4 Quad Cameras  6 accelerometers  4 microphones,,,,,660 action samples,,,,Recordings of a single person performing 12 actions,Berkeley Multimodal Human Action Database (MHAD),,2013
+"[Classification,  action detection]",,K. Soomro et al.,,,,Video  images  text,,,,,13000,,,,"Self described as ""a dataset of 101 human actions classes from videos in the wild."" Dataset is large with over 27 hours of video.",UCF 101 Dataset,,2012
+"[Classification,  action detection]",,Y. Jiang et al.,,,,Video  images  text,,,,,45M frames of video,,,,Large video dataset for action classification.,THUMOS Dataset,,2013
+"[Classification,  action detection]",,Heilbron et al.,,,,Video  images  text,,,,,10024,,,,Large video dataset for activity recognition and detection.,Activitynet,,2015
+"[Classification,  action detection]",,"Sadoughi, N. et al.",,,,Motion-captured video  audio,,,,,74 sessions,,,,"Improvised scenarios annotated for discourse functions: contrast, confirmation/negation, question, uncertainty, suggest, giving orders, warn, inform, size description, using pronouns.",MSP-AVATAR,,2015
+[Action detection],,Sheerman-Chase et al.,,,,Video,,,,,527,,,,"Video datasets for non-verbal communication activity recognition: agreement, thinking, asking and understanding.",LILiR Twotalk Corpus,,2011
+[Action detection],,Stoian et al.,,,,Video,,,,,1000,,,,Video dataset for action localization and spotting,MEXAction2,,2014
+[Video object segmentation],,"Pont-Tuset, J. et al.",,,,Frames annotated,,,,,10459,,,,150 video sequences containing 10459 frames with a total of 376 objects annotated.,DAVIS: Densely Annotated VIdeo Segmentation 2017,,2017
+[Video object segmentation],,"Perazzi, F. et al.",,,,Frames annotated,,,,,3455,,,,50 video sequences containing 3455 frames with a total of 50 objects annotated.,DAVIS: Densely Annotated VIdeo Segmentation 2016,,2016
+"[6D object pose estimation,  object detection]",,T. Hodan et al.,,,,RGB-D images  3D object models,,,,,49000,,,,30 industry-relevant objects. 39K training and 10K test images from each of three sensors. Two types of 3D models for each object.,T-LESS: An RGB-D Dataset for 6D Pose Estimation of Texture-less Objects,,2017
+[Object recognition],,A. Janoch et al.,,,,labeled images  text,,,,,849,,,,849 images taken in 75 different scenes. About 50 different object classes are labeled.,Berkeley 3-D Object Dataset,,2014
+[Contour detection and hierarchical image segmentation],,"University of California, Berkeley",,,,Segmented images,,,,,500,,,,"500 natural images, explicitly separated into disjoint train, validation and test subsets + benchmarking code. Based on BSDS300.",Berkeley Segmentation Data Set and Benchmarks 500 (BSDS500),,2011
+[Object recognition],,T. Lin et al.,,,,Labeled images  text,,,,,2500000,,,,complex everyday scenes of common objects in their natural context.,Microsoft Common Objects in Context (COCO),,2015
+"[Object recognition,  scene recognition]",,J. Xiao et al.,,,,Images  text,,,,,131067,,,,Very large scene and object recognition database.,SUN Database,,2014
+"[Object recognition,  scene recognition]",,J. Deng et al.,,,,Images  text,,,,,14197122,,,,"Labeled object image database, used in the ImageNet Large Scale Visual Recognition Challenge",ImageNet,,2014
+"[Classification,  Object recognition]",,"Krasin, I. et al.",,,,Images  text,,,,,9178275,,,,A Large set of images listed as having CC BY 2.0 license with image-level labels and bounding boxes spanning thousands of classes.,Open Images,,2017
+"[Clustering,  classification]",,P. Guha et al.,,,,Text,,,,,129685,,,,TV commercials and news broadcasts.,TV News Channel Commercial Detection Dataset,,2015
+[Classification],,University of Massachusetts,,,,Text,,,,,2310,,,,The instances were drawn randomly from a database of 7 outdoor images and hand-segmented to create a classification for every pixel.,Statlog (Image Segmentation) Dataset,,1990
+"[Classification,  object recognition.]",,F. Li et al.,,,,Images,,,,,9146,,,,Pictures of objects.,Caltech 101,,2003
+"[Classification,  object detection]",,G. Griffin et al.,,,,Images  Text,,,,,30607,,,,Large dataset of images for object classification.,Caltech-256,,2007
+"[Classification,  object detection]",,X. Fu et al.,,,,Text,,,,,11164866,,,,SIFT features of Caltech-256 dataset.,SIFT10M Dataset,,2016
+"[Classification,  object detection]",,MIT Computer Science and Artificial Intelligence Laboratory,,,,Images  text,,,,,187240,,,,Annotated pictures of scenes.,LabelMe,,2005
+"[Classification,  object detection]",,Daimler AG et al.,,,,Images  text,,,,,25000,,,,"Stereo video sequences recorded in street scenes, with pixel-level annotations. Metadata also included.",Cityscapes Dataset,,2016
+"[Classification,  object detection]",,M. Everingham et al.,,,,Images  text,,,,,500000,,,,Large number of images for classification tasks.,PASCAL VOC Dataset,,2010
+[Classification],,A. Krizhevsky et al.,,,,Images,,,,,60000,,,,"Many small, low-resolution, images of 10 classes of objects.",CIFAR-10 Dataset,,2009
+[Classification],,A. Krizhevsky et al.,,,,Images,,,,,60000,,,,"Like CIFAR-10, above, but 100 classes of objects are given.",CIFAR-100 Dataset,,2009
+[Classification],,Zalando SE,,,,Images,,,,,60000,,,,A MNIST-like fashion product database,Fashion-MNIST,,2017
+[Classification],,Yaroslav Bulatov,,,,Images,,,,,500000,,,,"Some publicly available fonts and extracted glyphs from them to make a dataset similar to MNIST. There are 10 classes, with letters A-J taken from different fonts.",notMNIST,,2011
+[Classification],,S Houben et al.,,,,Images,,,,,900,,,,Images from vehicles of traffic signs on German roads. These signs comply with UN standards and therefore are the same as in other countries.,German Traffic Sign Detection Benchmark Dataset,,2013
+"[Classification,  object detection]",,A Geiger et al.,,,,Images  text,,,,,>100 GB of data,,,,Autonomous vehicles driving through a mid-size city captured images of various areas using cameras and laser scanners.,KITTI Vision Benchmark Dataset,,2012
+[Classification],,Chaladze & Kalatozishvili,,,,Images,,,,,8000,,,,Images of 5 classes of objects.,Linnaeus 5 dataset,,2017
+"[Classification,  object detection,  object localization]",,M. Kragh et al.,,,,Images and 3D point clouds,,,,,>400 GB of data,,,,"Multi-modal dataset for obstacle detection in agriculture including stereo camera, thermal camera, web camera, 360-degree camera, lidar, radar, and precise localization.",FieldSAFE,,2017
+[Gender recognition and biometric identification],,M Afifi,,,,Images and (.mat  .txt  and .csv) label files,,,,,"11,076 hand images",,,,"11,076 hand images (1600 x 1200 pixels) of 190 subjects, of varying ages between 18 – 75 years old, for gender recognition and biometric identification.",11K Hands,,2017
+"[Classification,  Object recognition]",,V. Lomonaco and D. Maltoni,,,,"images (.png or .pkl)
+and (.pkl  .txt  .tsv) label files
+",,,,,"164,866 RBG-D images",,,,"Specifically designed for Continuous/Lifelong Learning and Object Recognition, is a collection of more than 500 videos (30fps) of 50 domestic objects belonging to 10 different categories.",CORe50,,2017
+"[Handwriting recognition,  classification]",,H. Guvenir et al.,,,,Text,,,,,6000,,,,Artificially generated data describing the structure of 10 capital English letters.,Artificial Characters Dataset,,1992
+"[OCR,  classification]",,D. Slate et al.,,,,Text,,,,,20000,,,,Upper case printed letters.,Letter Dataset,,1991
+"[Handwriting recognition,  classification]",,B. Williams,,,,Text,,,,,2858,,,,Labeled samples of pen tip trajectories for people writing simple characters.,Character Trajectories Dataset,,2008
+"[Character recognition,  handwriting recognition,  OCR,  classification]",,T. de Campos,,,,,,,,,74107,,,,Character recognition in natural images of symbols used in both English and Kannada,Chars74K Dataset,,2009
+"[Handwriting recognition,  classification]",,F. Prat et al.,,,,Text,,,,,11640,,,,Isolated handwritten characters,UJI Pen Characters Dataset,,2009
+"[Handwriting recognition,  classification]",,Yann LeCun et al.,,,,Images  text,,,,,13500,,,,Handwriting samples from the often-confused 4 and 9 characters.,Gisette Dataset,,2003
+[Classification],,National Institute of Standards and Technology,,,,Images  text,,,,,60000,,,,Database of handwritten digits.,MNIST database,,1998
+"[Handwriting recognition,  classification]",,E. Alpaydin et al.,,,,Images  text,,,,,5620,,,,Normalized bitmaps of handwritten data.,Optical Recognition of Handwritten Digits Dataset,,1998
+"[Handwriting recognition,  classification]",,E. Alpaydin et al.,,,,Images  text,,,,,10992,,,,Handwritten digits on electronic pen-tablet.,Pen-Based Recognition of Handwritten Digits Dataset,,1998
+"[Handwriting recognition,  classification]",,T. Srl,,,,Images  text,,,,,1593,,,,Handwritten digits from 80 people.,Semeion Handwritten Digit Dataset,,2008
+[Classification],,Martin Thoma,,,,Images  text,,,,,168233,,,,Handwritten mathematical symbols,HASYv2,,2017
+"[Aerial Classification,  object detection]",,J. Yuan et al.,,,,Images,,,,,80,,,,80 high-resolution aerial images with spatial resolution ranging from 0.3 to 1.0.,Aerial Image Segmentation Dataset,,2013
+"[People tracking,  aerial tracking]",,M. Butenuth et al.,,,,Images with paths,,,,,~ 150,,,,Multiple labeled training and evaluation datasets of aerial images of crowds.,KIT AIS Data Set,,2012
+"[Classification,  aerial object detection]",,B. Johnson,,,,Images,,,,,4899,,,,Remote sensing data of diseased trees and other land cover.,Wilt Dataset,,2014
+[Classification],,B. Johnson,,,,Text,,,,,326,,,,Satellite imagery of forests in Japan.,Forest Type Mapping Dataset,,2015
+[Classification],,F. Tanner et al.,,,,Images  text,,,,,1000,,,,Annotated overhead imagery. Images with multiple objects.,Overhead Imagery Research Data Set,,2009
+"[Classification,  Object Identification]",,"DigitalGlobe, Inc.",,,,Images,,,,,>17533,,,,SpaceNet is a corpus of commercial satellite imagery and labeled training data.,SpaceNet,,2017
+[Classification],,M. Rohrbach et al.,,,,Labeled video  images  text,,,,,"881,755 frames",,,,Videos and images of various cooking activities.,MPII Cooking Activities Dataset,,2012
+[Authentication],,"S. Voloshynovskiy, et al.",,,,Images and .mat files,,,,,30000,,,,"5,000 unique microstructures, all samples have been acquired 3 times with two different cameras.",FAMOS Dataset,,2012
+[Fine-grain classification],,"O. Taran and S. Rezaeifar, et al.",,,,Images and .mat files,,,,,54000,,,,"1,000 unique classes with 54 images per class.",PharmaPack Dataset,,2017
+[Fine-grain classification],,A. Khosla et al.,,,,Images  text,,,,,20580,,,,Images of 120 breeds of dogs from around the world.,Stanford Dogs Dataset,,2011
+"[Classification,  object detection]",,O. Parkhi et al.,,,,Images  text,,,,,"~ 7,400",,,,37 categories of pets with roughly 200 images of each.,The Oxford-IIIT Pet Dataset,,2012
+"[Classification,  object detection]",,M. Ortega-Bindenberger et al.,,,,Text,,,,,68040,,,,Database of images with features extracted.,Corel Image Features Data Set,,1999
+[Regression],,T. Deneke et al.,,,,Text,,,,,168286,,,,Transcoding times for various different videos and video properties.,Online Video Characteristics and Transcoding Time Dataset.,,2015
+[Visual storytelling],,Microsoft Research,,,,Images  text,,,,,81743,,,,Dataset for sequential vision-to-language,Microsoft Sequential Image Narrative Dataset (SIND),,2016
+[Classification],,C. Wah et al.,,,,Images  text,,,,,11788,,,,Large dataset of images of birds.,Caltech-UCSD Birds-200-2011 Dataset,,2011
+[Video classification],,S. Abu-El-Haija et al.,,,,Video  text,,,,,8 million,,,,Large and diverse labeled video dataset,YouTube-8M,,2016
+[Video and Image classification],,B. Thomee et al.,,,,Video  Image  Text,,,,,100 million,,,,Large and diverse labeled image and video dataset,YFCC100M,,2016
+[Video emotion elicitation detection],,Y. Baveye et al.,,,,Video,,,,,9800,,,,Short videos annotated for valence and arousal.,Discrete LIRIS-ACCEDE,,2015
+[Video emotion elicitation detection],,Y. Baveye et al.,,,,Video,,,,,30,,,,Long videos annotated for valence and arousal while also collecting Galvanic Skin Response.,Continuous LIRIS-ACCEDE,,2015
+[Video emotion elicitation detection],,Y. Baveye et al.,,,,Video,,,,,10900,,,,Extension of Discrete LIRIS-ACCEDE including annotations for violence levels of the films.,MediaEval LIRIS-ACCEDE,,2015
+[Human pose estimation],,S. Johnson and M. Everingham,,,,Images plus .mat file labels,,,,,2000,,,,Articulated human pose annotations in 2000 natural sports images from Flickr.,Leeds Sports Pose,,2010
+[Human pose estimation],,S. Johnson and M. Everingham,,,,Images plus .mat file labels,,,,,10000,,,,"Articulated human pose annotations in 10,000 natural sports images from Flickr.",Leeds Sports Pose Extended Training,,2011
+[Development of multiple choice test assessment systems],,"Afifi, M. et al.",,,,Images and .mat file labels,,,,,"735 answer sheets and 33,540 answer boxes",,,,"6 different real multiple choice-based exams (735 answer sheets and 33,540 answer boxes) to evaluate computer vision techniques and systems developed for multiple choice test assessment systems.",MCQ Dataset,,2017
+[Data compression],,"Taj-Eddin, I. A. T. F. et al.",,,,Videos,,,,,19 surveillance videos (7 days with 24 hours each).,,,,Real surveillance videos cover a large surveillance time (7 days with 24 hours each).,Surveillance Videos,,2016
+[Liveness detection of plants],,"Taj-Eddin, I. A. T. F. et al.",,,,Videos,,,,,32 videos,,,,32 videos for eight live and eight dead leaves recorded under both DC and AC lighting conditions.,Can We See Photosynthesis?,,2017
+"[Classification,  sentiment analysis]",,McAuley et al.,,,,Text,,,,,~ 82M,,,,US product reviews from Amazon.com.,Amazon reviews,,2015
+"[Sentiment analysis,  clustering]",,K. Ganesan et al.,,,,Text,,,,,"42,230 / ~259,000 respectively",,,,Reviews of cars and hotels from Edmunds.com and TripAdvisor respectively.,OpinRank Review Dataset,,2011
+"[Regression,  clustering,  classification]",,GroupLens Research,,,,Text,,,,,~ 22M,,,,"22,000,000 ratings and 580,000 tags applied to 33,000 movies by 240,000 users.",MovieLens,,2016
+"[Clustering,  regression]",,Yahoo!,,,,Text,,,,,~ 10M,,,,Over 10M ratings of artists by Yahoo users.,Yahoo! Music User Ratings of Musical Artists,,2004
+[Classification],,M. Bohanec,,,,Text,,,,,1728,,,,Car properties and their overall acceptability.,Car Evaluation Data Set,,1997
+[Classification],,Google,,,,Text,,,,,1138562,,,,User vote data for pairs of videos shown on YouTube. Users voted on funnier videos.,YouTube Comedy Slam Preference Dataset,,2012
+"[Classification,  regression]",,Q. Nguyen,,,,Text,,,,,41396,,,,"User reviews of airlines, airports, seats, and lounges from Skytrax.",Skytrax User Reviews Dataset,,2015
+[Classification],,W. Loh et al.,,,,Text,,,,,151,,,,Teaching assistant reviews.,Teaching Assistant Evaluation Dataset,,1997
+"[Sentiment analysis,  topic extraction]",,"Dermouche, M. et al.",,,,XML  text,,,,,10421,,,,English news articles about the case relating to allegations of sexual assault against the former IMF director Dominique Strauss-Kahn.,NYSK Dataset,,2013
+"[Classification,  clustering,  summarization]",,Reuters,,,,Text,,,,,810000,,,,Large corpus of Reuters news stories in English.,The Reuters Corpus Volume 1,,2002
+"[Classification,  clustering,  summarization]",,Reuters,,,,Text,,,,,487000,,,,Large corpus of Reuters news stories in multiple languages.,The Reuters Corpus Volume 2,,2005
+"[Classification,  clustering,  summarization]",,T. Rose et al.,,,,Text,,,,,1800370,,,,Large corpus of news stories.,Thomson Reuters Text Research Collection,,2009
+"[Summarization,  clustering]",,M. Alhagri,,,,JSON,,,,,31030,,,,"31,030 Arabic newspaper articles.",Saudi Newspapers Corpus,,2015
+"[Classification,  Entity and Relation recognition]",,Dstl,,,,JSON,,,,,not known,,,,Entity and Relation marked data from various news and government sources. Sponsored by Dstl,RE3D (Relationship and Entity Extraction Evaluation Dataset),,2017
+"[Clustering,  Events,  Sentiment]",,R. Kulkarni,,,,CSV,,,,,1082477,,,,Entire news corpus of ABC Australia from 2003 to 2017,ABC Australia News Corpus,,2017
+"[Clustering,  Events,  Sentiment]",,R. Kulkarni,,,,CSV,,,,,3089781,,,,"Clickbait, spam, crowd-sourced headlines from 2010 to 2015",Examiner Pseudo-News Corpus,,2017
+"[Clustering,  Events,  Language Detection]",,R. Kulkarni,,,,CSV,,,,,1398431,,,,One week snapshot of all online headlines in 20+ languages,Worldwide News - Aggregate of 20K Feeds,,2017
+"[NLP,  Computational Linguistics,  Events]",,R. Kulkarni,,,,CSV,,,,,6039000,,,,12 Years of timestamped events published on the news-wire,Reuters News Wire Headline Archive,,2018
+"[Network analysis,  sentiment analysis]",,"Klimt, B. and Y. Yang",,,,Text,,,,,"~ 500,000",,,,Emails from employees at Enron organized into folders.,Enron Email Dataset,,2004 (2015)
+[Classification],,"Androutsopoulos, J. et al.",,,,Text,,,,,,,,,Corpus containing both legitimate and spam emails.,Ling-Spam Dataset,,2000
+[Classification],,T. Almeida et al.,,,,Text,,,,,5574,,,,Collected SMS spam messages.,SMS Spam Collection Dataset,,2011
+[Natural language processing],,T. Mitchell et al.,,,,Text,,,,,20000,,,,Messages from 20 different newsgroups.,Twenty Newsgroups Dataset,,1999
+"[Spam detection,  classification]",,M. Hopkins et al.,,,,Text,,,,,4601,,,,Spam emails.,Spambase Dataset,,1999
+[Cross-media retrival],,"Y. Hu, et al.",,,,Text and Images,,,,,100000,,,,Pairs of images and tweets,Twitter100k,,2017
+[Sentiment analysis],,A. Go et al.,,,,Tweets  comma  separated values,,,,,1578627,,,,"Tweet data from 2009 including original text, time stamp, user and sentiment.",Sentiment140,,2009
+"[Clustering,  graph analysis]",,R. Zafarani et al.,,,,Text,,,,,"11,316,811 users, 85,331,846 connections",,,,"Twitter network data, not actual tweets. Shows connections between a large number of users.",ASU Twitter Dataset,,2009
+"[Clustering,  graph analysis]",,J. McAuley et al.,,,,Text,,,,,1768149,,,,Large twitter network data.,SNAP Social Circles: Twitter Database,,2012
+[Classification],,N. Abdulla,,,,Text,,,,,2000,,,,Arabic tweets.,Twitter Dataset for Arabic Sentiment Analysis,,2014
+"[Regression,  Classification]",,F. Kawala et al.,,,,Text,,,,,140000,,,,Data from Twitter and Tom's Hardware. This dataset focuses on specific buzz topics being discussed on those sites.,Buzz in Social Media Dataset,,2013
+"[Regression,  Classification]",,Xu et al.,,,,Text,,,,,18762,,,,This dataset focuses on whether tweets have (almost) same meaning/information or not. Manually labeled.,Paraphrase and Semantic Similarity in Twitter (PIT),,2015
+"[Summarization, 
+citation analysis
+]",,F. Galgani et al.,,,,Text,,,,,4000,,,,Federal Court of Australia cases from 2006 to 2009.,Legal Case Reports,,2012
+"[Sentiment analysis,  summarization,  classification]",,J. Schler et al.,,,,Text,,,,,681288,,,,"Blog entries of 19,320 people from blogger.com.",Blogger Authorship Corpus,,2006
+"[Network analysis,  clustering]",,A. Traud et al.,,,,Text,,,,,100 colleges covered,,,,Large dataset of the social structure of Facebook.,Social Structure of Facebook Networks,,2012
+"[Natural language processing,  machine comprehension]",,M. Richardson et al.,,,,Text,,,,,660,,,,Stories and associated questions for testing comprehension of text.,Dataset for the Machine Comprehension of Text,,2013
+"[Natural language processing,  summarization]",,M. Marcus et al.,,,,Text,,,,,~ 1M words,,,,Naturally occurring text annotated for linguistic structure.,The Penn Treebank Project,,1995
+[Classification],,Reuters,,,,Text,,,,,2600,,,,"Task given is to determine, from features given, which articles are about corporate acquisitions.",DEXTER Dataset,,2008
+"[Classification,  clustering,  regression]",,Google,,,,Text,,,,,2.2 TB of text,,,,N-grams from a very large corpus of books,Google Books N-grams,,2011
+"[Classification,  regression]",,K. Luyckx et al.,,,,Text,,,,,145,,,,Collected for experiments in Authorship Attribution and Personality Prediction. Consists of 145 Dutch-language essays.,Personae Corpus,,2008
+[Classification],,P. Ciarelli et al.,,,,Text,,,,,1080,,,,Categorization task for free text descriptions of Brazilian companies.,CNAE-9 Dataset,,2012
+"[Classification,  sentiment analysis]",,D. Kotzias,,,,Text,,,,,3000,,,,3000 sentiment labeled sentences.,Sentiment Labeled Sentences Dataset,,2015
+[Regression],,K. Buza,,,,Text,,,,,60021,,,,Dataset to predict the number of comments a post will receive based on features of that post.,BlogFeedback Dataset,,2014
+[Natural language inference/recognizing textual entailment],,S. Bowman et al.,,,,Text,,,,,570000,,,,"Image captions matched with newly constructed sentences to form entailment, contradiction, or neutral pairs.",Stanford Natural Language Inference (SNLI) Corpus,,2015
+[Discriminating between similar languages],,"Tan, Liling et al.",,,,Text,,,,,"294,000 phrases",,,,A multilingual collection of short excerpts of journalistic texts in similar languages and dialects.,DSL Corpus Collection (DSLCC),,2017
+"[NLP,  Machine comprehension]",,Anonymous,,,,CSV,,,,,2606522,,,,"Corpus of words, votes and definitions",Urban Dictionary Dataset,,2016-05
+[Unsupervised discovery of speech features/subword units/word units],,Versteegh et al.,,,,sound,,,,,"English: 5h, 12 speakers; Xitsonga: 2h30; 24 speakers",,,,"Spontaneous speech (English), Read speech (Xitsonga).",Zero Resource Speech Challenge 2015,,2015
+"[Classification,  regression]",,B. E. Sakar et al.,,,,Text,,,,,1040,,,,Multiple recordings of people with and without Parkinson's Disease.,Parkinson Speech Dataset,,2013
+[Classification],,M. Bedda et al.,,,,Text,,,,,8800,,,,Spoken Arabic digits from 44 male and 44 female.,Spoken Arabic Digits,,2010
+[Classification],,R. Cole et al.,,,,Text,,,,,7797,,,,Spoken letter names.,ISOLET Dataset,,1994
+[Classification],,M. Kudo et al.,,,,Text,,,,,640,,,,Nine male speakers uttered two Japanese vowels successively.,Japanese Vowels Dataset,,1999
+[Classification],,A. Tsanas et al.,,,,Text,,,,,5875,,,,Multiple recordings of people with and without Parkinson's Disease.,Parkinson's Telemonitoring Dataset,,2009
+"[Speech recognition,  classification.]",,J. Garofolo et al.,,,,Text,,,,,6300,,,,"Recordings of 630 speakers of eight major dialects of American English, each reading ten phonetically rich sentences.",TIMIT,,1986
+"[Speech Synthesis,  Speech Recognition,  Corpus Alignment,  Speech Therapy,  Education.]",,N. Halabi,,,,Text  WAV,,,,,~1900,,,,"A single-speaker, Modern Standard Arabic (MSA) speech corpus with phonetic and orthographic transcripts aligned to phoneme level",Arabic Speech Corpus,,2016
+[Speech phoneme and speaker classification],,S.Malekzadeh et al.,,,,Speech sound samples,,,,,Persian: 1794 (To be continued...),,,,Persian phonemes Speech Dataset.,Persian Consonant Vowel Combination (PCVC) Speech Dataset,,2018
+"[Geographical classification,  clustering]",,F. Zhou et al.,,,,Text,,,,,1059,,,,Audio features of music samples from different locations.,Geographical Original of Music Data Set,,2014
+"[Classification,  clustering]",,T. Bertin-Mahieux et al.,,,,Text,,,,,1M,,,,Audio features from one million different songs.,Million Song Dataset,,2011
+"[Classification,  recommendation]",,M. Defferrard et al.,,,,Text  MP3,,,,,106574,,,,"Audio under Creative Commons from 100k songs (343 days, 1TiB) with a hierarchy of 161 genres, metadata, user data, free-form text.",Free Music Archive,,2017
+[Classification],,D. Radicioni et al.,,,,Text,,,,,5665,,,,Bach chorale chords.,Bach Choral Harmony Dataset,,2014
+[Classification],,J. Salamon et al.,,,,"Sound
+(WAV)
+",,,,,1059,,,,"Labeled sound recordings of sounds like air conditioners, car horns and children playing.",UrbanSound,,2014
+[Classification],,"J. Gemmeke et al., Google",,,,Text (CSV) and TensorFlow Record files,,,,,2084320,,,,"10-second sound snippets from YouTube videos, and an ontology of over 500 labels.",AudioSet,,2017
+[Classification],,Center for Applied Internet Data Analysis,,,,Text,,,,,"55,909 IP addresses",,,,Dataset detailing the spread of the Witty worm and the infected computers.,Witty Worm Dataset,,2004
+"[Classification,  regression]",,M. Kachuee et al.,,,,Text,,,,,12000,,,,Cleaned vital signals from human patients which can be used to estimate blood pressure.,Cuff-Less Blood Pressure Estimation Dataset,,2015
+[Classification],,A. Vergara,,,,Text,,,,,13910,,,,Measurements from 16 chemical sensors utilized in simulations for drift compensation.,Gas Sensor Array Drift Dataset,,2012
+[Regression],,K. Ullrich,,,,Text,,,,,167,,,,Data covering the nonlinear relationships observed in a servo-amplifier circuit.,Servo Dataset,,1993
+"[Classification,  regression,  clustering]",,D. Rambla et al.,,,,Text,,,,,40000,,,,Indoor localization database to test indoor positioning systems. Data is magnetic field based.,UJIIndoorLoc-Mag Dataset,,2015
+[Classification],,M. Bator,,,,Text,,,,,58508,,,,Electrical signals from motors with defective components.,Sensorless Drive Diagnosis Dataset,,2015
+[Classification],,Pontifical Catholic University of Rio de Janeiro,,,,Text,,,,,165632,,,,People performing five standard actions while wearing motion tackers.,Wearable Computing: Classification of Body Postures and Movements (PUC-Rio),,2013
+"[Classification,  clustering]",,R. Madeo et a,,,,Text,,,,,9900,,,,Features extracted from video of people doing various gestures.,Gesture Phase Segmentation Dataset,,2014
+[Classification],,T. Theodoridis,,,,Text,,,,,3000,,,,10 normal and 10 aggressive physical actions that measure the human activity tracked by a 3D tracker.,Vicon Physical Action Data Set Dataset,,2011
+[Classification],,B. Barshan et al.,,,,Text,,,,,9120,,,,Motor sensor data for 19 daily and sports activities.,Daily and Sports Activities Dataset,,2013
+[Classification],,J. Reyes-Ortiz et al.,,,,Text,,,,,10299,,,,Gyroscope and accelerometer data from people wearing smartphones and performing normal actions.,Human Activity Recognition Using Smartphones Dataset,,2012
+[Classification],,M. Kadous,,,,Text,,,,,2565,,,,Australian sign language signs captured by motion-tracking gloves.,Australian Sign Language Signs,,2002
+[Classification],,W. Ugulino et al.,,,,Text,,,,,39242,,,,Five variations of the biceps curl exercise monitored with IMUs.,Weight Lifting Exercises monitored with Inertial Measurement Units,,2013
+[Classification],,C. Sapsanis et al.,,,,Text,,,,,3000,,,,Two databases of surface electromyographic signals of 6 hand movements.,sEMG for Basic Hand movements Dataset,,2014
+[Classification],,O. Banos et al.,,,,Text,,,,,1419,,,,Evaluate techniques dealing with the effects of sensor displacement in wearable activity recognition.,REALDISP Activity Recognition Dataset,,2014
+"[Classification,  clustering]",,A. Stisen et al.,,,,Text,,,,,43930257,,,,Data from multiple different smart devices for humans performing various activities.,Heterogeneity Activity Recognition Dataset,,2015
+[Classification],,D. Bacciu,,,,Text,,,,,13197,,,,Temporal wireless network data that can be used to track the movement of people in an office.,Indoor User Movement Prediction from RSS Data,,2016
+[Classification],,A. Reiss,,,,Text,,,,,3850505,,,,18 different types of physical activities performed by 9 subjects wearing 3 IMUs.,PAMAP2 Physical Activity Monitoring Dataset,,2012
+[Classification],,D. Roggen et al.,,,,Text,,,,,2551,,,,"Human Activity Recognition from wearable, object, and ambient sensors is a dataset devised to benchmark human activity recognition algorithms.",OPPORTUNITY Activity Recognition Dataset,,2012
+[Classification],,T. Sztyler et al.,,,,Text,,,,,"3,150,000 (per sensor)",,,,Human Activity Recognition from wearable devices. Distinguishes between seven on-body device positions and comprises six different kinds of sensors.,Real World Activity Recognition Dataset,,2016
+"[Classification,  regression]",,M. Forina et al.,,,,Text,,,,,178,,,,Chemical analysis of wines grown in the same region in Italy but derived from three different cultivars.,Wine Dataset,,1991
+[Regression],,P. Tufekci et al.,,,,Text,,,,,9568,,,,Data from various sensors within a power plant running for 6 years.,Combined Cycle Power Plant Data Set,,2014
+[Classification],,D. Whiteson,,,,Text,,,,,11M,,,,Monte Carlo simulations of particle accelerator collisions.,HIGGS Dataset,,2014
+[Classification],,D. Whiteson,,,,Text,,,,,10500000,,,,Monte Carlo simulations of particle accelerator collisions. Goal is to separate the signal from noise.,HEPMASS Dataset,,2016
+[Regression],,R. Lopez,,,,Text,,,,,308,,,,Yacht performance based on dimensions.,Yacht Hydrodynamics Dataset,,2013
+[Classification],,L. Seabra et al.,,,,Text,,,,,463,,,,5 data sets that center around robotic failure to execute common tasks.,Robot Execution Failures Dataset,,1999
+[Classification],,Y. Reich et al.,,,,Text,,,,,108,,,,Design description is given in terms of several properties of various bridges.,Pittsburgh Bridges Dataset,,1990
+[Regression],,J. Schimmer et al.,,,,Text,,,,,205,,,,"Data about automobiles, their insurance risk, and their normalized losses.",Automobile Dataset,,1987
+[Regression],,Carnegie Mellon University,,,,Text,,,,,398,,,,MPG data for cars.,Auto MPG Dataset,,1993
+"[Classification,  regression]",,A. Xifara et al.,,,,Text,,,,,768,,,,Heating and cooling requirements given as a function of building parameters.,Energy Efficiency Dataset,,2012
+[Regression],,R. Lopez,,,,Text,,,,,1503,,,,A series of aerodynamic and acoustic tests of two and three-dimensional airfoil blade sections.,Airfoil Self-Noise Dataset,,2014
+[Regression],,D. Draper et al.,,,,Text,,,,,23,,,,Attempt to predict O-ring problems given past Challenger data.,Challenger USA Space Shuttle O-Ring Dataset,,1993
+[Classification],,NASA,,,,Text,,,,,58000,,,,NASA space shuttle datasets.,Statlog (Shuttle) Dataset,,2002
+[Classification],,M. Burl,,,,Images,,,,,not given,,,,Venus images returned by the Magellan spacecraft.,Volcanoes on Venus – JARtool experiment Dataset,,1991
+[Classification],,R. Bock,,,,Text,,,,,19020,,,,Monte Carlo generated high-energy gamma particle events.,MAGIC Gamma Telescope Dataset,,2007
+"[Regression,  classification]",,G. Bradshaw,,,,Text,,,,,1389,,,,Measurements of the number of certain types of solar flare events occurring in a 24-hour period.,Solar Flare Dataset,,1989
+"[Regression,  classification]",,E. Venzke et al.,,,,Text,,,,,1535,,,,Volcanic eruption data for all known volcanic events on earth.,Volcanoes of the World,,2013
+[Classification],,M. Sikora et al.,,,,Text,,,,,2584,,,,Seismic activities from a coal mine.,Seismic-bumps Dataset,,2013
+[Regression],,I. Yeh,,,,Text,,,,,1030,,,,Dataset of concrete properties and compressive strength.,Concrete Compressive Strength Dataset,,2007
+[Regression],,I. Yeh,,,,Text,,,,,103,,,,Concrete slump flow given in terms of properties.,Concrete Slump Test Dataset,,2009
+[Classification],,Arris Pharmaceutical Corp.,,,,Text,,,,,6598,,,,"Predict if a molecule, given the features, will be a musk or a non-musk.",Musk Dataset,,1994
+[Classification],,Semeion Research Center,,,,Text,,,,,1941,,,,Steel plates of 7 different types.,Steel Plates Faults Dataset,,2010
+[Classification],,H. Begleiter,,,,Text,,,,,122,,,,Study to examine EEG correlates of genetic predisposition to alcoholism.,EEG Database,,1999
+[Classification],,U. Hoffman et al.,,,,Text,,,,,1224,,,,Data from nine subjects collected using P300-based brain-computer interface for disabled subjects.,P300 Interface Dataset,,2008
+[Classification],,A. Janosi et al.,,,,Text,,,,,303,,,,Attributed of patients with and without heart disease.,Heart Disease Data Set,,1988
+[Classification],,W. Wolberg et al.,,,,Text,,,,,569,,,,Dataset of features of breast masses. Diagnoses by physician is given.,Breast Cancer Wisconsin (Diagnostic) Dataset,,1995
+"[Classification,  regression]",,United States Department of Health and Human Services,,,,Text,,,,,55268,,,,Large scale survey on health and drug use in the United States.,National Survey on Drug Use and Health,,2012
+[Classification],,Z. Hong et al.,,,,Text,,,,,32,,,,Lung cancer dataset without attribute definitions,Lung Cancer Dataset,,1992
+[Classification],,H. Altay et al.,,,,Text,,,,,452,,,,"Data for a group of patients, of which some have cardiac arrhythmia.",Arrhythmia Dataset,,1998
+"[Classification,  clustering]",,J. Clore et al.,,,,Text,,,,,100000,,,,9 years of readmission data across 130 US hospitals for patients with diabetes.,Diabetes 130-US hospitals for years 1999–2008 Dataset,,2014
+[Classification],,B. Antal et al.,,,,Text,,,,,1151,,,,Features extracted from images of eyes with and without diabetic retinopathy.,Diabetic Retinopathy Debrecen Dataset,,2014
+"[Classification,  Segmentation]",,Messidor Project,,,,Images Text,,,,,1200,,,,Methods to evaluate segmentation and indexing techniques in the field of retinal ophthalmology (MESSIDOR),Diabetic Retinopathy Messidor Dataset,,2008
+[Classification],,Bupa Medical Research Ltd.,,,,Text,,,,,345,,,,Data for people with liver disorders.,Liver Disorders Dataset,,1990
+[Classification],,R. Quinlan,,,,Text,,,,,7200,,,,10 databases of thyroid disease patient data.,Thyroid Disease Dataset,,1987
+[Classification],,A. Tanrikulu et al.,,,,Text,,,,,324,,,,Mesothelioma patient data.,Mesothelioma Dataset,,2016
+"[Classification,  clustering,  regression]",,M. Naeem et al.,,,,Text,,,,,65554,,,,Network of metabolic pathways. A reaction network and a relation network are given.,KEGG Metabolic Reaction Network (Undirected) Dataset,,2011
+[Regression],,Marine Research Laboratories – Taroona,,,,Text,,,,,4177,,,,Physical measurements of Abalone. Weather patterns and location are also given.,Abalone Dataset,,1995
+[Classification],,R. Forsyth,,,,Text,,,,,101,,,,Artificial dataset covering 7 classes of animals.,Zoo Dataset,,1990
+[Classification],,E. Armengol et al.,,,,Text,,,,,503,,,,Data about marine sponges.,Demospongiae Dataset,,2010
+[Classification],,G. Towell et al.,,,,Text,,,,,3190,,,,Primate splice-junction gene sequences (DNA) with associated imperfect domain theory.,Splice-junction Gene Sequences Dataset,,1992
+"[Classification,  Clustering]",,C. Higuera et al.,,,,Text,,,,,1080,,,,Expression levels of 77 proteins measured in the cerebral cortex of mice.,Mice Protein Expression Dataset,,2015
+[Regression],,P. Cortez et al.,,,,Text,,,,,517,,,,Forest fires and their properties.,Forest Fires Dataset,,2008
+[Classification],,R. Fisher,,,,Text,,,,,150,,,,Three types of iris plants are described by 4 different attributes.,Iris Dataset,,1936
+[Classification],,J. Cope et al.,,,,Text,,,,,1600,,,,Sixteen samples of leaf each of one-hundred plant species.,Plant Species Leaves Dataset,,2012
+[Classification],,J. Schlimmer,,,,Text,,,,,8124,,,,Mushroom attributes and classification.,Mushroom Dataset,,1987
+[Classification],,R. Michalski et al.,,,,Text,,,,,307,,,,Database of diseased soybean plants.,Soybean Dataset,,1988
+"[Classification,  clustering]",,Charytanowicz et al.,,,,Text,,,,,210,,,,Measurements of geometrical properties of kernels belonging to three different varieties of wheat.,Seeds Dataset,,2012
+[Classification],,J. Blackard et al.,,,,Text,,,,,581012,,,,Data for predicting forest cover type strictly from cartographic variables.,Covertype Dataset,,1998
+[Causal-discovery],,J. Jenkens et al.,,,,Text,,,,,300,,,,Data for a plant signaling network. Goal is to determine set of rules that governs the network.,Abscisic Acid Signaling Network Dataset,,2008
+"[Classification,  clustering]",,T. Munisami et al.,,,,Images  text,,,,,637,,,,20 photos of leaves for each of 32 species.,Folio Dataset,,2015
+[Classification],,M-E Nilsback et al.,,,,Images  text,,,,,1360,,,,17 category dataset of flowers.,Oxford Flower Dataset,,2006
+"[Classification,  detection]",,Giselsson et al.,,,,Images,,,,,5544,,,,12 category dataset of plant seedlings.,Plant Seedlings Dataset,,2017
+[Classification],,"Horea Muresan, Mihai Oltean",,,,Images (jpg),,,,,38409,,,,"60 Fruits: Apples - (different varieties: Golden, Golden-Red, Granny Smith, Red, Red Delicious), Apricot, Avocado, Avocado ripe, Banana (Yellow, Red), Cactus fruit, Carambula, Cherry, Clementine, Cocos, Dates, Granadilla, Grape (Pink, White, White2), Grapefruit (Pink, White), Guava, Huckleberry, Kiwi, Kaki, Kumsquats, Lemon (normal, Meyer), Lime, Litchi, Mandarine, Mango, Maracuja, Nectarine, Orange, Papaya, Passion fruit, Peach, Pepino, Pear (different varieties, Abate, Monster, Williams), Pineapple, Pitahaya Red, Plum, Pomegranate, Quince, Raspberry, Salak, Strawberry, Tamarillo, Tangelo.",Fruits 360 Dataset,,2017
+[Classification],,K. Nakai et al.,,,,Text,,,,,336,,,,Protein localization sites.,Ecoli Dataset,,1996
+[Classification],,P. Mahe et al.,,,,Text,,,,,931,,,,Identification of microorganisms from mass-spectrometry data.,MicroMass Dataset,,2013
+[Classification],,K. Nakai et al.,,,,Text,,,,,1484,,,,Predictions of Cellular localization sites of proteins.,Yeast Dataset,,1996
+[Classification],,A. Mayr et al.,,,,Text,,,,,12707,,,,Prediction of outcome of biological assays.,Tox21 Dataset,,2016
+[Anomaly detection],,Numenta,,,,Comma separated values,,,,,50+ files,,,,"Data are ordered, timestamped, single-valued metrics. All data files contain anomalies, unless otherwise noted.",Numenta Anomaly Benchmark (NAB),,2016 (continually updated)
+[Anomaly detection],,Campos et al.,,,,ARFF,,,,,1000+ files,,,,"Most data files are adapted from UCI Machine Learning Repository data, some are collected from the literature.","On the Evaluation of Unsupervised Outlier Detection: Measures, Datasets, and an Empirical Study",,2016 (possibly updated with new datasets and/or results)
+[Question Answering],,"Hartmann, Soru, and Marx et al.",,,,Question-query pairs,,,,,894499,,,,A large collection of Question to SPARQL specially design for Open Domain Neural Question Answering over DBpedia Knowledgebase.,DBpedia Neural Question Answering (DBNQA) Dataset,,2018
+"[Classification,  regression,  Time series]",,M. Brown et al.,,,,Comma separated values,,,,,750,,,,Weekly data of stocks from the first and second quarters of 2011.,Dow Jones Index,,2014
+[Classification],,R. Quinlan,,,,Comma separated values,,,,,690,,,,Credit card applications either accepted or rejected and attributes about the application.,Statlog (Australian Credit Approval),,1987
+"[Regression,  classification]",,G. Shmueli et al.,,,,Text,,,,,~ 550,,,,Auction data from various eBay.com objects over various length auctions,eBay auction data,,2012
+[Classification],,H. Hofmann,,,,Text,,,,,690,,,,"Binary credit classification into ""good"" or ""bad"" with many features",Statlog (German Credit Data),,1994
+[Classification],,S. Moro et al.,,,,Text,,,,,45211,,,,Data from a large marketing campaign carried out by a large bank .,Bank Marketing Dataset,,2012
+"[Classification,  regression]",,O. Akbilgic,,,,Text,,,,,536,,,,Several stock indexes tracked for almost two years.,Istanbul Stock Exchange Dataset,,2013
+[Classification],,I. Yeh,,,,Text,,,,,30000,,,,Credit default data for Taiwanese creditors.,Default of Credit Card Clients,,2016
+"[Classification,  clustering]",,P. Collard,,,,Text,,,,,1024,,,,Data about 1024 different clouds.,Cloud DataSet,,1989
+[Regression],,Pacific Marine Environmental Laboratory,,,,Text,,,,,178080,,,,Oceanographic and surface meteorological readings taken from a series of buoys positioned throughout the equatorial Pacific.,El Nino Dataset,,1999
+[Regression],,D. Lucas,,,,Text,,,,,2921,,,,Time-series of greenhouse gas concentrations at 2921 grid cells in California created using simulations of the weather.,Greenhouse Gas Observing Network Dataset,,2015
+[Regression],,Mauna Loa Observatory,,,,Text,,,,,44 years,,,,"Continuous air samples in Hawaii, USA. 44 years of records.",Atmospheric CO2 from Continuous Air Samples at Mauna Loa Observatory,,2001
+[Classification],,Johns Hopkins University,,,,Text,,,,,351,,,,Radar data from the ionosphere. Task is to classify into good and bad radar returns.,Ionosphere Dataset,,1989
+[Classification],,K. Zhang et al.,,,,Text,,,,,2536,,,,Two ground ozone level datasets.,Ozone Level Detection Dataset,,2008
+[Classification],,United States Census Bureau,,,,Comma separated values,,,,,48842,,,,Census data from 1994 containing demographic features of adults and their income.,Adult Dataset,,1996
+[Classification],,United States Census Bureau,,,,Comma separated values,,,,,299285,,,,Weighted census data from the 1994 and 1995 Current Population Surveys.,Census-Income (KDD),,2000
+"[Classification,  regression]",,IPUMS,,,,Text,,,,,256932,,,,Census data from the Los Angeles and Long Beach areas.,IPUMS Census Database,,1999
+"[Classification,  regression]",,United States Census Bureau,,,,Text,,,,,2458285,,,,Partial data from 1990 US census.,US Census Data 1990,,1990
+[Regression],,H. Fanaee-T,,,,Text,,,,,17389,,,,Hourly and daily count of rental bikes in a large city.,Bike Sharing Dataset,,2013
+"[Classification,  clustering]",,New York City Taxi and Limousine Commission,,,,Text,,,,,6 years,,,,Trip data for yellow and green taxis in New York City.,New York City Taxi Trip Data,,2015
+"[Clustering,  causal-discovery]",,M. Ferreira et al.,,,,Text,,,,,1710671,,,,Trajectories of all taxis in a large city.,Taxi Service Trajectory ECML PKDD,,2015
+"[clustering,  classification]",,V. Granville,,,,Text,,,,,3.5B,,,,Large collection of webpages and how they are connected via hyperlinks,Webpages from Common Crawl 2012,,2013
+[Classification],,N. Kushmerick,,,,Text,,,,,3279,,,,Dataset for predicting if a given image is an advertisement or not.,Internet Advertisements Dataset,,1998
+"[Classification,  clustering]",,D. Cook,,,,Text,,,,,10104,,,,General demographics of internet users.,Internet Usage Dataset,,1999
+[Classification],,J. Ma,,,,Text,,,,,2396130,,,,120 days of URL data from a large conference.,URL Dataset,,2009
+[Classification],,R. Mustafa et al.,,,,Text,,,,,2456,,,,Dataset of phishing websites.,Phishing Websites Dataset,,2015
+"[Classification,  clustering]",,D. Chen,,,,Text,,,,,541909,,,,Online transactions for a UK online retailer.,Online Retail Dataset,,2015
+"[Classification,  clustering]",,Freebase,,,,Text,,,,,large,,,,Freebase is an online effort to structure all human knowledge.,Freebase Simple Topic Dump,,2011
+[Classification],,C. Masterharm et al.,,,,Text,,,,,4143,,,,The text of farm ads from websites. Binary approval or disapproval by content owners is given.,Farm Ads Dataset,,2011
+"[Regression,  classification]",,R. Cattral,,,,Text,,,,,1025010,,,,5 card hands from a standard 52 card deck.,Poker Hand Dataset,,2007
+[Classification],,J. Tromp,,,,Text,,,,,67557,,,,"Contains all legal 8-ply positions in the game of connect-4 in which neither player has won yet, and in which the next move is not forced.",Connect-4 Dataset,,1995
+[Classification],,M. Bain et al.,,,,Text,,,,,28056,,,,Endgame Database for White King and Rook against Black King.,Chess (King-Rook vs. King) Dataset,,1994
+[Classification],,R. Holte,,,,Text,,,,,3196,,,,King+Rook versus King+Pawn on a7.,Chess (King-Rook vs. King-Pawn) Dataset,,1989
+[Classification],,D. Aha,,,,Text,,,,,958,,,,Binary classification for win conditions in tic-tac-toe.,Tic-Tac-Toe Endgame Dataset,,1991
+[Regression],,D. Harrison et al.,,,,Text,,,,,506,,,,Median home values of Boston with associated home and neighborhood attributes.,Housing Data Set,,1993
+[Classification],,Getty Center,,,,Text,,,,,large,,,,"structured terminology for art and other material culture, archival materials, visual surrogates, and bibliographic materials.",The Getty Vocabularies,,2015
+"[Regression,  clustering]",,Chu et al.,,,,Text,,,,,"45,811,883 user visits",,,,User click log for news articles displayed in the Featured Tab of the Today Module on Yahoo! Front Page.,Yahoo! Front Page Today Module User Click Log,,2009
+"[Regression,  clustering]",,British Oceanographic Data Centre,,,,Text,,,,,"22K variables, many instances",,,,"Biological, chemical, physical and geophysical data for oceans. 22K variables tracked.",British Oceanographic Data Centre,,2015
+[Classification],,J. Schlimmer,,,,Text,,,,,435,,,,Voting data for all USA representatives on 16 issues.,Congressional Voting Records Dataset,,1987
+"[Regression,  recommendation]",,R. Burke,,,,Text,,,,,50672,,,,Record of user interactions with Entree Chicago recommendation system.,Entree Chicago Recommendation Dataset,,2000
+"[Regression,  classification]",,P. van der Putten,,,,Text,,,,,9000,,,,Information on customers of an insurance company.,Insurance Company Benchmark (COIL 2000),,2000
+[Classification],,V. Rajkovic et al.,,,,Text,,,,,12960,,,,Data from applicants to nursery schools.,Nursery Dataset,,1997
+"[Clustering,  classification]",,S. Sounders et al.,,,,Text,,,,,285,,,,Data describing attributed of a large number of universities.,University Dataset,,1988
+[Classification],,I. Yeh,,,,Text,,,,,748,,,,"Data from blood transfusion service center. Gives data on donors return rate, frequency, etc.",Blood Transfusion Service Center Dataset,,2008
+[Classification],,University of Mainz,,,,Text,,,,,5749132,,,,Large dataset of records. Task is to link relevant records together.,Record Linkage Comparison Patterns Dataset,,2011
+[Classification],,Nomao Labs,,,,Text,,,,,34465,,,,Nomao collects data about places from many different sources. Task is to detect items that describe the same place.,Nomao Dataset,,2012
+"[Clustering,  classification]",,G. Wiederhold,,,,Text,,,,,10000,,,,"Data for 10,000 movies.",Movie Dataset,,1999
+"[Classification,  clustering,  regression]",,J. Kuzilek et al.,,,,Text,,,,,"~ 30,000",,,,Information about students and their interactions with a virtual learning environment.,Open University Learning Analytics Dataset,,2015
