@@ -24,6 +24,24 @@ from nltk.stem import PorterStemmer
 
 from fuzzywuzzy import process
 
+#!/usr/bin/env python
+
+import os, lucene
+
+from java.nio.file import Paths
+from org.apache.lucene.analysis.standard import StandardAnalyzer
+from org.apache.lucene.index import DirectoryReader
+from org.apache.lucene.queryparser.classic import QueryParser
+from org.apache.lucene.queryparser.classic import MultiFieldQueryParser
+from org.apache.lucene.store import SimpleFSDirectory
+from org.apache.lucene.search import IndexSearcher
+from org.apache.lucene.queryparser.complexPhrase import ComplexPhraseQueryParser
+from org.apache.lucene.queryparser.ext import ExtendableQueryParser
+from org.apache.lucene.search import BooleanClause 
+from org.apache.lucene.queries import CustomScoreQuery
+from org.apache.lucene.queries import CustomScoreProvider
+from org.apache.lucene.util import Version
+
 # import sys
 # reload(sys)
 # sys.setdefaultencoding('utf-8')
@@ -35,19 +53,26 @@ mysql = MySQL()
 mysql.init_app(app)
 
 database_username = 'root'
-database_password = 'Shayaan7'
+database_password = '****'  #Please replace **** with your password
 database_ip       = '127.0.0.1'
 database_name     = 'huduku'
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Shayaan7'
+app.config['MYSQL_DATABASE_PASSWORD'] = '****'
 app.config['MYSQL_DATABASE_DB'] = 'huduku'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'. format(database_username, database_password, database_ip, database_name), echo=False, encoding="utf8")
 
 
+INDEX_DIR = "IndexFiles.index"
 
+#lucene.initVM(vmargs=['-Djava.awt.headless=true'])
+#print 'lucene', lucene.VERSION
+#base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+#directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR)))
+#searcher = IndexSearcher(DirectoryReader.open(directory))
+#analyzer = StandardAnalyzer()
 
 ps = PorterStemmer()
 loaded_vectorizer = pickle.load(open('../models/vectorizer.pkl', 'rb'))
@@ -222,6 +247,32 @@ def Predict(keyword):
 	greater_than_thresh = d[d['Probability']>thresh]
 	return greater_than_thresh.drop(['Predicted','Probability'],axis=1)
 
+def search(command, searcher, analyzer):
+#	while True:
+#		print
+#		print "Hit enter with no input to quit."
+#		command = raw_input("Query:")
+#		if command == '':
+#			return
+#
+#		print
+#		print "Searching for:", command
+		d = pd.read_csv('../../data/new_data/all.csv')
+		fields = ("description", "title", "summary", "keywords")
+		parser = MultiFieldQueryParser(fields, analyzer)
+		query = MultiFieldQueryParser.parse(parser, command)
+		#query = QueryParser("description", analyzer).parse(command)
+		#query = parser.parse(command)
+		scoreDocs = searcher.search(query, 50).scoreDocs
+		#print "%s total matching documents." % len(scoreDocs)
+		topics = []
+		for scoreDoc in scoreDocs:
+			doc = searcher.doc(scoreDoc.doc)
+			topics.append(doc.get("title"))
+			#print 'Topic:', doc.get("title"), 'Score:', scoreDoc.score
+		df = d.loc[d['Title'].isin(topics)]
+		return df	
+
 
 @app.route('/')
 def student():
@@ -232,7 +283,18 @@ def result():
    if request.method == 'POST':
 	  result = request.form
 	  keyword = result['Name']
-	  df = Predict(keyword)
+	  #if(name):
+	  #	df = Predict(keyword)
+	  #elif(keywords _search):
+	  #print 'lucene', lucene.VERSION
+	  vm_env = lucene.getVMEnv()
+	  vm_env.attachCurrentThread()
+	  base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+	  directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR)))
+          searcher = IndexSearcher(DirectoryReader.open(directory))
+          analyzer = StandardAnalyzer()
+	  df = search(keyword, searcher, analyzer)
+	  del searcher
 	  # df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
 	  df.to_sql(con=database_connection, name='result', if_exists='replace')
 	  # df['Author'] =df['Author'].apply(stemming)
@@ -245,4 +307,5 @@ def result():
 	  return render_template("test.html",result=data)
 
 if __name__ == '__main__':
-   app.run(threaded=True,debug = True,host= '0.0.0.0')
+	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
+	app.run(threaded=True,debug = True,host= '0.0.0.0')
