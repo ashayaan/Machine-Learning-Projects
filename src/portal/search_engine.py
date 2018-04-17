@@ -273,7 +273,6 @@ def search(command, searcher, analyzer):
 		df = d.loc[d['Title'].isin(topics)]
 		return df	
 
-
 @app.route('/')
 def student():
    return render_template('student.html')
