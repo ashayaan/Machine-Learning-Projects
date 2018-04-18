@@ -53,12 +53,12 @@ mysql = MySQL()
 mysql.init_app(app)
 
 database_username = 'root'
-database_password = '****'  #Please replace **** with your password
+database_password = 'Shayaan7'  #Please replace **** with your password
 database_ip       = '127.0.0.1'
 database_name     = 'huduku'
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '****'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Shayaan7'
 app.config['MYSQL_DATABASE_DB'] = 'huduku'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
@@ -275,35 +275,36 @@ def search(command, searcher, analyzer):
 
 @app.route('/')
 def student():
-   return render_template('student.html')
+   return render_template('index.html')
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
-   if request.method == 'POST':
-	  result = request.form
-	  keyword = result['Name']
-	  #if(name):
-	  #	df = Predict(keyword)
-	  #elif(keywords _search):
-	  #print 'lucene', lucene.VERSION
-	  vm_env = lucene.getVMEnv()
-	  vm_env.attachCurrentThread()
-	  base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-	  directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR)))
-          searcher = IndexSearcher(DirectoryReader.open(directory))
-          analyzer = StandardAnalyzer()
-	  df = search(keyword, searcher, analyzer)
-	  del searcher
-	  # df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
-	  df.to_sql(con=database_connection, name='result', if_exists='replace')
-	  # df['Author'] =df['Author'].apply(stemming)
-	  conn = mysql.connect()
-	  cursor =conn.cursor()
-	  cursor.execute("SELECT * from result;")
-	  data = cursor.fetchall()
-	  # print df.iloc[0]
-	  # print data[0]
-	  return render_template("test.html",result=data)
+	if request.method == 'POST':
+		result = request.form
+		keyword = result['Name']
+		criteria = request.form['criteria']
+		print criteria
+		if criteria == 'domain':
+			df = Predict(keyword)
+		elif criteria == 'keyword':
+			vm_env = lucene.getVMEnv()
+			vm_env.attachCurrentThread()
+			base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+			directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR)))
+			searcher = IndexSearcher(DirectoryReader.open(directory))
+			analyzer = StandardAnalyzer()
+		  	df = search(keyword, searcher, analyzer)
+		  	del searcher
+		# df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
+		df.to_sql(con=database_connection, name='result', if_exists='replace')
+		# df['Author'] =df['Author'].apply(stemming)
+		conn = mysql.connect()
+		cursor =conn.cursor()
+		cursor.execute("SELECT * from result;")
+		data = cursor.fetchall()
+		# print df.iloc[0]
+		# print data[0]
+		return render_template("test.html",result=data)
 
 if __name__ == '__main__':
 	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
