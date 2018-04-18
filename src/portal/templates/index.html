@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ML Project</title>
+	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+	<style type="text/css">
+		body {
+			font-family: 'Nunito', sans-serif;
+			    height: 100%;
+		}
+		.container_align{
+		    height: 100%;
+		    display: flex;
+		    margin-top: 200px;
+		    margin-left: 480px;
+		    /*justify-content: center;*/
+		    align-items: center;
+		}
+		.img{
+			margin-top: 1em;
+			height: 150px;
+			width: 400px;
+		}
+	</style>
+</head>
+
+
+<body> 
+	<div class="container container_align">
+		<div class="row">
+			<img class="img" src="/static/logo2.png" class="img-responsive"/>
+			<form action = "http://localhost:5000/result" method = "POST">
+				 <p><input type = "text" name = "Name" />
+				 	<label><input type="radio" name="criteria" value="domain" checked>Domain</label>
+					<label><input type="radio" name="criteria" value="keyword">Keyword</label>
+				 </p>
+				 <input type = "submit" value = "Search" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>
