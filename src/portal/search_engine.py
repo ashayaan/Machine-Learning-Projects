@@ -67,12 +67,6 @@ database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{
 
 INDEX_DIR = "IndexFiles.index"
 
-#lucene.initVM(vmargs=['-Djava.awt.headless=true'])
-#print 'lucene', lucene.VERSION
-#base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-#directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR)))
-#searcher = IndexSearcher(DirectoryReader.open(directory))
-#analyzer = StandardAnalyzer()
 
 ps = PorterStemmer()
 loaded_vectorizer = pickle.load(open('../models/vectorizer.pkl', 'rb'))
@@ -83,8 +77,6 @@ filename = '../models/finalized_model_LRl2.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
 
 def stemming(sentence):
-	#if (type(sentence) is float):
-	#	sentence = ''
 	s = sentence.translate(None, string.punctuation)
 	str1 = ''.join([i if ord(i) < 128 else ' ' for i in s]) #selecting only ascii characters
 	words = word_tokenize(str1)

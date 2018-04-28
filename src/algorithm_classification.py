@@ -45,35 +45,35 @@ d_algo_list = d_algo.apply(listify)
 algo_list = d_algo_list.tolist()
 label_list = flatten(algo_list)
 labels = np.unique(label_list)
-print (labels)
+print len(labels)
 
 print('Training class distributions summary: {}'.format(Counter(label_list)))
 #print('Test class distributions summary: {}'.format(Counter(y_test)))
 
-le = preprocessing.LabelEncoder()
-le.fit(labels)
-encoded_algo = d_algo_list.apply(lambda x : le.transform(x))
-m = MultiLabelBinarizer()
-y = m.fit_transform(encoded_algo)
-#print (y.shape)
+# le = preprocessing.LabelEncoder()
+# le.fit(labels)
+# encoded_algo = d_algo_list.apply(lambda x : le.transform(x))
+# m = MultiLabelBinarizer()
+# y = m.fit_transform(encoded_algo)
+# #print (y.shape)
 
 
-df = df.drop(df.columns[df.columns.str.contains('unnamed',case = False)],axis = 1)
-df_algo = df.loc[d_algo.index]
-data_raw = df_algo['Title']+df_algo['Description']+df_algo['Summary']
-data = data_raw.apply(stemming)
-data_train,data_test,y_train,y_test = train_test_split(data,y,test_size=0.2)
-X_train = loaded_vectorizer.transform(data_train)
-X_test = loaded_vectorizer.transform(data_test)
+# df = df.drop(df.columns[df.columns.str.contains('unnamed',case = False)],axis = 1)
+# df_algo = df.loc[d_algo.index]
+# data_raw = df_algo['Title']+df_algo['Description']+df_algo['Summary']
+# data = data_raw.apply(stemming)
+# data_train,data_test,y_train,y_test = train_test_split(data,y,test_size=0.2)
+# X_train = loaded_vectorizer.transform(data_train)
+# X_test = loaded_vectorizer.transform(data_test)
 
-classif = OneVsRestClassifier(SVC(kernel='rbf'))
-classif.fit(X_train, y_train)
-pred = classif.predict(X_test)
-score = metrics.accuracy_score(y_test,pred)
-hamming_score = metrics.hamming_loss(y_test,pred)
-print (le.inverse_transform(m.inverse_transform(pred)))
-print ("Exact matching score: "+str(score))
-print ("Hamming loss: "+str(hamming_score))
+# classif = OneVsRestClassifier(SVC(kernel='rbf'))
+# classif.fit(X_train, y_train)
+# pred = classif.predict(X_test)
+# score = metrics.accuracy_score(y_test,pred)
+# hamming_score = metrics.hamming_loss(y_test,pred)
+# print (le.inverse_transform(m.inverse_transform(pred)))
+# print ("Exact matching score: "+str(score))
+# print ("Hamming loss: "+str(hamming_score))
 
 '''
 clf = MLPClassifier(activation='relu',solver='sgd', alpha=1e-5, hidden_layer_sizes=(100, 50), random_state=8)
