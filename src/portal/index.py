@@ -76,6 +76,7 @@ class IndexFiles(object):
 	desc = df['Description']
 	keywords = df['Keywords']
 	algorithm = df['Algorithm']
+	algorithm = algorithm.apply(lambda x : x.replace('[','').replace(']','').replace(',',''))
 	#fd.close()
 	#contents_list = [x.strip() for x in contents]
 	for i in xrange(rows):
@@ -85,12 +86,13 @@ class IndexFiles(object):
 			descI = desc[i]
 			keywordsI = keywords[i]
 			algorithmI = algorithm[i]
+			print algorithmI
 			doc = Document()
 			#doc.add(Field("id", str(i), t1))
-			doc.add(Field("title", titleI, t2))
-			doc.add(Field("summary", summaryI, t2))
-			doc.add(Field("description", descI, t2))
-			doc.add(Field("keywords", keywordsI, t2))
+			doc.add(Field("title", titleI, t1))
+			# doc.add(Field("summary", summaryI, t2))
+			# doc.add(Field("description", descI, t2))
+			# doc.add(Field("keywords", keywordsI, t2))
 			doc.add(Field("algorithm",algorithmI,t2))
 			writer.addDocument(doc)
 		except Exception, e:

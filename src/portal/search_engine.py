@@ -66,6 +66,7 @@ database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{
 
 
 INDEX_DIR = "IndexFiles.index"
+INDEX_DIR2 = "IndexFiles2.index"
 
 
 ps = PorterStemmer()
@@ -190,8 +191,6 @@ def super_super_classes(keyword,targets,le,prob):
 		return None
 
 def super_super_super_classes(keyword,targets,le,prob):
-	#classes_list = ['Science']
-	#new_key = process.extractOne(keyword, classes_list)
 	if (keyword == 'Science'):
 		prob_bio = super_super_classes('Biology',targets,le,prob)
 		prob_env = super_classes('Environment',targets,le,prob)
@@ -243,59 +242,31 @@ def Predict(keyword):
 	return greater_than_thresh.drop(['Predicted','Probability'],axis=1)
 
 def search(command, searcher, analyzer):
-#	while True:
-#		print
-#		print "Hit enter with no input to quit."
-#		command = raw_input("Query:")
-#		if command == '':
-#			return
-#
-#		print
-#		print "Searching for:", command
 		d = pd.read_csv('../../data/new_data/check_data.csv')
 		d.fillna('',inplace=True)
 		d = d.drop(d.columns[d.columns.str.contains('unnamed',case = False)],axis = 1)
 		fields = ("description", "title", "summary", "keywords")
 		parser = MultiFieldQueryParser(fields, analyzer)
 		query = MultiFieldQueryParser.parse(parser, command)
-		#query = QueryParser("description", analyzer).parse(command)
-		#query = parser.parse(command)
 		scoreDocs = searcher.search(query, 50).scoreDocs
-		#print "%s total matching documents." % len(scoreDocs)
 		topics = []
 		for scoreDoc in scoreDocs:
 			doc = searcher.doc(scoreDoc.doc)
 			topics.append(doc.get("title"))
-			#print 'Topic:', doc.get("title"), 'Score:', scoreDoc.score
 		df = d.loc[d['Title'].isin(topics)]
 		return df	
 
 
 def algoSearch(command, searcher, analyzer):
-#	while True:
-#		print
-#		print "Hit enter with no input to quit."
-#		command = raw_input("Query:")
-#		if command == '':
-#			return
-#
-#		print
-#		print "Searching for:", command
 		d = pd.read_csv('../../data/new_data/check_data.csv')
 		d.fillna('',inplace=True)
 		d = d.drop(d.columns[d.columns.str.contains('unnamed',case = False)],axis = 1)
-		#fields = ("algorithm")
-		#parser = MultiFieldQueryParser(fields, analyzer)
-		#query = MultiFieldQueryParser.parse(parser, command)
 		query = QueryParser("algorithm", analyzer).parse(command)
-		query = parser.parse(command)
 		scoreDocs = searcher.search(query, 50).scoreDocs
-		#print "%s total matching documents." % len(scoreDocs)
 		topics = []
 		for scoreDoc in scoreDocs:
 			doc = searcher.doc(scoreDoc.doc)
 			topics.append(doc.get("title"))
-			#print 'Topic:', doc.get("title"), 'Score:', scoreDoc.score
 		df = d.loc[d['Title'].isin(topics)]
 		return df	
 
@@ -321,15 +292,23 @@ def result():
 			analyzer = StandardAnalyzer()
 		  	df = search(keyword, searcher, analyzer)
 		  	del searcher
-		# df.to_html('templates/test.html' , na_rep='NaN', decimal='.')
+		elif criteria == 'algorithm':
+			labels = ['BigQuery','CausalDiscovery','Classification','Clustering','DataCompression','DataMining','DeepLearning','Detection','Events','FaceDetection','FaceRecognition','FunctionLearning','GeospatialAnalysis','GraphAnalysis','HandwritingRecognition','ImageClassification','NLP','ObjectDetection','ObjectRecognition','Optimization','RecommenderSystems','Regression','RelationalLearning','Segmentation','SentimentAnalysis','SpeechRecognition','Summarization','TimeSeries','TopicModeling','TransferLearning','UnsupervisedClassification','VideoClassification','Visualization']
+			key_final = process.extractOne(keyword, labels)[0]
+			vm_env = lucene.getVMEnv()
+			vm_env.attachCurrentThread()
+			base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+			directory = SimpleFSDirectory(Paths.get(os.path.join(base_dir, INDEX_DIR2)))
+			searcher = IndexSearcher(DirectoryReader.open(directory))
+			analyzer = StandardAnalyzer()
+		  	df = algoSearch(key_final, searcher, analyzer)
+		  	del searcher
+		
 		df.to_sql(con=database_connection, name='result', if_exists='replace')
-		# df['Author'] =df['Author'].apply(stemming)
 		conn = mysql.connect()
 		cursor =conn.cursor()
 		cursor.execute("SELECT * from result;")
 		data = cursor.fetchall()
-		# print df.iloc[0]
-		# print data[0]
 		return render_template("test.html",result=data)
 
 if __name__ == '__main__':
