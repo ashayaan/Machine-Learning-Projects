@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-INDEX_DIR = "IndexFiles.index"
+INDEX_DIR = "IndexFiles2.index"
 
 import sys, os, lucene, threading, time
 from datetime import datetime
@@ -64,14 +64,18 @@ class IndexFiles(object):
         t2.setStoreTermVectorPositions(True)
         t2.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS)
 
-	file_path = root+'all.csv'
+	file_path = root+'check_data.csv'
 	#fd = open(file_path)
 	df = pd.read_csv(file_path)
+	df.fillna('',inplace=True)
+	df = df.drop(df.columns[df.columns.str.contains('unnamed',case = False)],axis = 1)
+
 	rows = df.shape[0]
 	title = df['Title']
 	summary = df['Summary']
 	desc = df['Description']
 	keywords = df['Keywords']
+	algorithm = df['Algorithm']
 	#fd.close()
 	#contents_list = [x.strip() for x in contents]
 	for i in xrange(rows):
@@ -80,12 +84,14 @@ class IndexFiles(object):
 			summaryI = summary[i]
 			descI = desc[i]
 			keywordsI = keywords[i]
+			algorithmI = algorithm[i]
 			doc = Document()
 			#doc.add(Field("id", str(i), t1))
 			doc.add(Field("title", titleI, t2))
 			doc.add(Field("summary", summaryI, t2))
 			doc.add(Field("description", descI, t2))
 			doc.add(Field("keywords", keywordsI, t2))
+			doc.add(Field("algorithm",algorithmI,t2))
 			writer.addDocument(doc)
 		except Exception, e:
 			print "Failed in indexDocs:", e

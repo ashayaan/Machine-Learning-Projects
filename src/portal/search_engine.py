@@ -204,7 +204,10 @@ def super_super_super_classes(keyword,targets,le,prob):
 
 
 def Predict(keyword):
-	d = pd.read_csv('../../data/new_data/all.csv')
+	d = pd.read_csv('../../data/new_data/check_data.csv')
+	d.fillna('',inplace=True)
+	d = d.drop(d.columns[d.columns.str.contains('unnamed',case = False)],axis = 1)
+
 	data_raw = d['Title']+d['Description']+d['Summary']
 
 	data = data_raw.apply(stemming)
@@ -249,12 +252,43 @@ def search(command, searcher, analyzer):
 #
 #		print
 #		print "Searching for:", command
-		d = pd.read_csv('../../data/new_data/all.csv')
+		d = pd.read_csv('../../data/new_data/check_data.csv')
+		d.fillna('',inplace=True)
+		d = d.drop(d.columns[d.columns.str.contains('unnamed',case = False)],axis = 1)
 		fields = ("description", "title", "summary", "keywords")
 		parser = MultiFieldQueryParser(fields, analyzer)
 		query = MultiFieldQueryParser.parse(parser, command)
 		#query = QueryParser("description", analyzer).parse(command)
 		#query = parser.parse(command)
+		scoreDocs = searcher.search(query, 50).scoreDocs
+		#print "%s total matching documents." % len(scoreDocs)
+		topics = []
+		for scoreDoc in scoreDocs:
+			doc = searcher.doc(scoreDoc.doc)
+			topics.append(doc.get("title"))
+			#print 'Topic:', doc.get("title"), 'Score:', scoreDoc.score
+		df = d.loc[d['Title'].isin(topics)]
+		return df	
+
+
+def algoSearch(command, searcher, analyzer):
+#	while True:
+#		print
+#		print "Hit enter with no input to quit."
+#		command = raw_input("Query:")
+#		if command == '':
+#			return
+#
+#		print
+#		print "Searching for:", command
+		d = pd.read_csv('../../data/new_data/check_data.csv')
+		d.fillna('',inplace=True)
+		d = d.drop(d.columns[d.columns.str.contains('unnamed',case = False)],axis = 1)
+		#fields = ("algorithm")
+		#parser = MultiFieldQueryParser(fields, analyzer)
+		#query = MultiFieldQueryParser.parse(parser, command)
+		query = QueryParser("algorithm", analyzer).parse(command)
+		query = parser.parse(command)
 		scoreDocs = searcher.search(query, 50).scoreDocs
 		#print "%s total matching documents." % len(scoreDocs)
 		topics = []

@@ -45,7 +45,7 @@ def stemming(sentence):
 	return ' '.join([s for s in words_stemmed])
 
 df = pd.read_csv('../data/new_data/test.csv')
-label_list = df['GeospatialAnalysis'].dropna()
+label_list = df['Classification'].dropna()
 d_algo = df['Algorithm'].dropna()
 d_algo_list = d_algo.apply(listify)
 algo_list = d_algo_list.tolist()
