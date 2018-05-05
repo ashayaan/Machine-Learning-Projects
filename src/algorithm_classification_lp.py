@@ -1,8 +1,8 @@
 import pandas as pd
-import sys
 import numpy as np
 import pickle
 import string
+import sys
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn import preprocessing
 from sklearn.neural_network import MLPClassifier
@@ -48,7 +48,7 @@ def stemming(sentence):
 
 df = pd.read_csv('../data/new_data/test.csv')
 algo = sys.argv[1]
-label_list = df[algo].dropna()
+label_list = df[algo].fillna(-1).astype(int)
 d_algo = df['Algorithm'].dropna()
 d_algo_list = d_algo.apply(listify)
 algo_list = d_algo_list.tolist()
@@ -85,24 +85,24 @@ X_train,X_test,y_train,y_test = train_test_split(tfidf,label_list,test_size=0.2)
 #X_resampled, y_resampled = cc.fit_sample(X_train, y_train)
 #classif = OneVsRestClassifier(SVC(kernel='rbf'))
 #classif = LogisticRegression(class_weight='balanced')
-#label_prop_model = LabelPropagation()
-#label_prop_model.fit(tfidf.todense(), label_list)
-#labels_series = pd.Series(label_prop_model.predict(X_train.todense()))
-#labels_test = pd.Series(label_prop_model.predict(X_test.todense()))
+label_prop_model = LabelPropagation()
+label_prop_model.fit(tfidf.todense(), label_list)
+labels_series = pd.Series(label_prop_model.predict(X_train.todense()))
+labels_test = pd.Series(label_prop_model.predict(X_test.todense()))
 #print(np.mean(labels_test == 1))
 classif =  MLPClassifier(hidden_layer_sizes=(100,50), max_iter=100, alpha=1e-4,solver='adam', verbose=10, tol=1e-4, random_state=1, learning_rate_init=1e-3)
 #classif = AdaBoostClassifier(DecisionTreeClassifier(max_depth=1),algorithm="SAMME",n_estimators=200)
-classif.fit(X_train, y_train)
+classif.fit(X_train, labels_series)
 pred = classif.predict(X_test)
-score = metrics.accuracy_score(y_test,pred)
-cm = metrics.confusion_matrix(y_test,pred)
+score = metrics.accuracy_score(labels_test,pred)
+cm = metrics.confusion_matrix(labels_test,pred)
 # print (le.inverse_transform(m.inverse_transform(pred)))
 print ("Accuracy: "+str(score))
 print ('Confusion matrix:')
 print (cm)
 
 #### ROC curves ####
-fpr, tpr, thresh = metrics.roc_curve(y_test, pred)
+fpr, tpr, thresh = metrics.roc_curve(labels_test, pred)
 plt.figure()
 lw=2
 plt.plot(fpr, tpr, color='red')
